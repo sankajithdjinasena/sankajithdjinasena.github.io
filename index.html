@@ -8,6 +8,16 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "uIwRJGRZPTy001VY1",
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -56,8 +66,7 @@
 
             <!-- CV Button -->
 
-            <a href="Sankajith D. Jinasena.pdf"
-                target="_blank" class="btn">Download CV</a><br><br>
+            <a href="Sankajith D. Jinasena.pdf" target="_blank" class="btn">Download CV</a><br><br>
             <a href="#contact" class="btn">Contact Me</a>
         </div>
     </section>
@@ -99,8 +108,8 @@
     <section class="experience" id="experience">
         <h2 class="heading">My <span>Experience</span></h2>
 
-        <div class="services-container">
-            <div class="services-box">
+        <div class="experience-container">
+            <div class="experience-box">
                 <img src="images/commercial bank.png" alt="Commercial Bank Logo"
                     style="width:60px; height:50px; margin-bottom:10px; display:block;">
                 <h3>Digital Service Assistance</h3>
@@ -115,7 +124,7 @@
                 </p>
             </div>
 
-            <div class="services-box">
+            <div class="experience-box">
                 <img src="images/dharmavijaya.png" alt="Dharmavijaya Computer Training School Logo"
                     style="width:60px; height:50px; margin-bottom:10px; display:block;">
                 <h3>IT Consultant</h3>
@@ -134,8 +143,8 @@
     <section class="education" id="education">
         <h2 class="heading">My <span>Education</span></h2>
 
-        <div class="services-container">
-            <div class="services-box">
+        <div class="education-container">
+            <div class="education-box">
                 <h3>Undergraduate in Data Science</h3>
                 <h2>Sabaragamuwa University, Sri Lanka <br>2024 - Present</h2>
                 <p>I'm an undergraduate in Data Science in Sabaragamuwa University, Belihuloya, Sri Lanka. In this
@@ -143,7 +152,7 @@
                     practical knowledge about programming and softwares.
                 </p>
             </div>
-            <div class="services-box">
+            <div class="education-box">
                 <h3>Student</h3>
                 <h2>Dharmaraja College<br>2020 - 2023</h2>
                 <p>I faces Advanced Level Exam in 2022(2023) in physical scheme including subjects Combined maths,
@@ -151,7 +160,7 @@
                 </p>
             </div>
 
-            <div class="services-box">
+            <div class="education-box">
                 <h3>Student</h3>
                 <h2>Dharmaraja College<br>2008 - 2019</h2>
                 <p>My school is Dharmaraja College, Kandy. It's one of best school in Sri Lanka. In 2019 I faced to O/L
@@ -164,43 +173,43 @@
         <h2 class="heading">Technical <span>Skills</span></h2>
 
         <div class="technical-skill">
-  <div class="services-box">
-    <i class='bx bxl-python'></i>
-    <h3>Python</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bx-data'></i>
-    <h3>SQL</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bx-math'></i>
-    <h3>Numpy</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bx-brain'></i>
-    <h3>Scikit-learn</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bx-network-chart'></i>
-    <h3>Tensorflow</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bx-bar-chart-alt'></i>
-    <h3>PowerBI</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bx-code'></i>
-    <h3>HTML/CSS</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bxl-php'></i>
-    <h3>PHP</h3>
-  </div>
-  <div class="services-box">
-    <i class='bx bxl-java'></i>
-    <h3>Java</h3>
-  </div>
-</div>
+            <div class="technical-skill-box">
+                <i class='bx bxl-python'></i>
+                <h3>Python</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bx-data'></i>
+                <h3>SQL</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bx-math'></i>
+                <h3>Numpy</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bx-brain'></i>
+                <h3>Scikit-learn</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bx-network-chart'></i>
+                <h3>Tensorflow</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bx-bar-chart-alt'></i>
+                <h3>PowerBI</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bx-code'></i>
+                <h3>HTML/CSS</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bxl-php'></i>
+                <h3>PHP</h3>
+            </div>
+            <div class="technical-skill-box">
+                <i class='bx bxl-java'></i>
+                <h3>Java</h3>
+            </div>
+        </div>
 
     </section>
 
@@ -209,7 +218,7 @@
         <h2 class="heading">Latest <span>Projects</span></h2>
 
         <div class="portfolio-container">
-            <div class="project-box">
+            <div class="portfolio-box">
                 <h3>Bus Management System - Ridesync</h3>
                 <h4>Associated with Sabaragamuwa University of Sri Lanka<br>2025 Feb - 2025 Jun</h4>
                 <p>RideSync is a web-based prototype designed to modernize public transport administration by
@@ -220,7 +229,7 @@
                         class='bx bx-link-external'></i></a>
             </div>
 
-            <div class="project-box">
+            <div class="portfolio-box">
                 <h3>
                     User Behavior Classification Based on Mobile Device Usage</h3>
                 <h4>Associated with Sabaragamuwa University of Sri Lanka<br>2024 Sep - 2024 Oct</h4>
@@ -233,7 +242,7 @@
 
             </div>
 
-            <div class="project-box">
+            <div class="portfolio-box">
                 <h3>Water Quality Prediction System - Hydroscan</h3>
                 <h4><br>2025 Jan - 2025 Mar</h4>
                 <p>Hydroscan is a machine learning-based water quality prediction system developed. It analyzes
@@ -247,7 +256,7 @@
         <br>
         <!--Project 2-->
         <div class="portfolio-container">
-            <div class="project-box">
+            <div class="portfolio-box">
                 <h3>AI Financial Market Data Analysis</h3>
                 <h4><br>2025 Aug - 2025 Aug</h4>
                 <p>This project analyzes a synthetic time-series financial dataset of companies involved in Artificial
@@ -258,7 +267,7 @@
                         style="font-size: 24px;" class='bx bx-link-external'></i></a>
             </div>
 
-            <div class="project-box">
+            <div class="portfolio-box">
                 <h3>Netflix Data Analysis</h3>
                 <h4><br>2024 Aug - 2025 Aug</h4>
                 <p>This project analyzes the Netflix Dataset which contains detailed information about Movies and TV
@@ -268,7 +277,7 @@
                 <a href="https://github.com/sankajithdjinasena/DataAnalysisProjects/tree/main/Netflix_Analysis"><i
                         style="font-size: 24px;" class='bx bx-link-external'></i></a>
             </div>
-            <div class="project-box">
+            <div class="portfolio-box">
                 <h3>Maternal Health Risk Predictor</h3>
                 <h4><br>2024 Sep - 2025 Sep</h4>
                 <p>A healthcare dataset collected from hospitals and clinics using IoT-based monitoring systems. It
@@ -285,19 +294,20 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="mailto:jobsanke26198@gmail.com" method="post" enctype="text/plain">
+        <form id="contact-form">
             <div class="input-box">
-                <input type="text" name="Full Name" placeholder="Full Name" required>
-                <input type="email" name="Email" placeholder="Email Address" required>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
             </div>
             <div class="input-box">
-                <input type="tel" name="Mobile" placeholder="Mobile Number">
-                <input type="text" name="Subject" placeholder="Email Subject">
+                <input type="tel" id="mobile" placeholder="Mobile Number">
+                <input type="text" id="subject" placeholder="Email Subject">
             </div>
-            <textarea name="Message" placeholder="Your Message" required></textarea>
+            <textarea id="message" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
+
 
 
     <!-- Footer -->
@@ -319,6 +329,33 @@
 
     <!--Javascript-->
     <script src="js/script.js"></script>
+    <!-- EmailJS SDK -->
+    <script>
+        const form = document.getElementById('contact-form');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            emailjs.send("service_r6z6ijf", "template_b768mtw", {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                mobile: document.getElementById('mobile').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                from_name: document.getElementById('name').value,
+                reply_to: document.getElementById('email').value
+            })
+                .then(function (response) {
+                    alert("Message sent successfully!");
+                    form.reset(); // clear form
+                }, function (error) {
+                    alert("Failed to send message. Please try again.");
+                    console.log(error);
+                });
+        });
+    </script>
+
+
 </body>
 
 </html>
