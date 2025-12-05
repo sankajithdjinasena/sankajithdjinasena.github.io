@@ -314,7 +314,16 @@ body {
     z-index: 1;
 }
 
-.btn {
+/* Detail Button Container */
+.detail-btn {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.detail-btn .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -323,7 +332,7 @@ body {
     border-radius: 50px;
     font-size: 1.7rem;
     font-weight: 600;
-    color: white;
+    color: rgb(0, 0, 0);
     letter-spacing: 0.5px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -331,9 +340,10 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+    min-width: 180px; /* Minimum width for consistency */
 }
 
-.btn::before {
+.detail-btn .btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -345,18 +355,104 @@ body {
     border-radius: 50px;
 }
 
-.btn:hover::before {
+.detail-btn .btn:hover::before {
     left: 0;
 }
 
-.btn:hover {
+.detail-btn .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
-.btn span {
+.detail-btn .btn span {
     position: relative;
     z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.detail-btn .btn:hover span {
+    color: white;
+}
+
+/* If you want to add icons to the buttons */
+.detail-btn .btn i {
+    margin-right: 0.8rem;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.detail-btn .btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsive Design for Detail Buttons */
+@media (max-width: 768px) {
+    .detail-btn {
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .detail-btn .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 1.3rem 2.5rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .detail-btn .btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.5rem;
+        min-width: 160px;
+    }
+}
+
+/* Alternative: Button with Download Icon */
+.btn-download {
+    background: var(--gradient-1);
+}
+
+.btn-download i {
+    margin-right: 0.8rem;
+}
+
+.btn-contact {
+    background: var(--gradient-3); /* Different gradient for contact button */
+}
+
+.btn-contact::before {
+    background: var(--gradient-4); /* Different hover gradient */
+}
+
+/* Alternative: Outline Button Style */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--text-color);
+}
+
+.btn-outline:hover {
+    background: var(--gradient-1);
+    border-color: transparent;
+}
+
+/* Button with Arrow */
+.btn-arrow {
+    position: relative;
+    padding-right: 4.5rem;
+}
+
+.btn-arrow::after {
+    content: '→';
+    position: absolute;
+    right: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-arrow:hover::after {
+    transform: translateX(5px);
 }
 
 /* About Section */
