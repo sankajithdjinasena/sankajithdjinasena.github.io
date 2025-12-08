@@ -255,3 +255,47 @@ document.addEventListener('focusout', (e) => {
         e.target.style.outline = 'none';
     }
 });
+
+    const certs = document.querySelectorAll(".certification-box");
+    const seeMoreBtn = document.getElementById("seeMoreBtn");
+    const seeLessBtn = document.getElementById("seeLessBtn");
+
+    const step = 8;
+    let visibleCount = step;
+
+    // Initial state
+    certs.forEach((cert, index) => {
+        if (index >= visibleCount) {
+            cert.style.display = "none";
+        }
+    });
+
+    seeLessBtn.style.display = "none";
+
+    seeMoreBtn.addEventListener("click", () => {
+        let shown = 0;
+
+        for (let i = visibleCount; i < certs.length && shown < step; i++) {
+            certs[i].style.display = "block";
+            shown++;
+        }
+
+        visibleCount += shown;
+
+        // When everything is visible
+        if (visibleCount >= certs.length) {
+            seeMoreBtn.style.display = "none";
+            seeLessBtn.style.display = "inline-block";
+        }
+    });
+
+    seeLessBtn.addEventListener("click", () => {
+        visibleCount = step;
+
+        certs.forEach((cert, index) => {
+            cert.style.display = index < step ? "block" : "none";
+        });
+
+        seeLessBtn.style.display = "none";
+        seeMoreBtn.style.display = "inline-block";
+    });
