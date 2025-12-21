@@ -6,7 +6,7 @@ const header = document.querySelector('.header');
 
 // Typed.js initialization
 const typed = new Typed('.multiple-text', {
-    strings: ['Data Scientist', 'ML Engineer', 'AI Developer', 'Full-Stack Developer'],
+    strings: ['Data Scientist', 'ML Engineer', 'AI Developer'],
     typeSpeed: 80,
     backSpeed: 60,
     backDelay: 1500,
