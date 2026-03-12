@@ -299,3 +299,148 @@ document.addEventListener('focusout', (e) => {
         seeLessBtn.style.display = "none";
         seeMoreBtn.style.display = "inline-block";
     });
+
+
+// ===========================
+// DATA SCIENCE CANVAS ANIMATION
+// ===========================
+(function () {
+  const canvas = document.getElementById('ds-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Neural network nodes
+  const layers = [3, 5, 5, 3];
+  let nodes = [];
+  let connections = [];
+
+  function buildNetwork() {
+    nodes = [];
+    connections = [];
+    const W = canvas.width, H = canvas.height;
+    const layerGap = W / (layers.length + 1);
+
+    layers.forEach((count, li) => {
+      const x = layerGap * (li + 1);
+      const nodeGap = H / (count + 1);
+      for (let ni = 0; ni < count; ni++) {
+        nodes.push({
+          x, y: nodeGap * (ni + 1),
+          layer: li,
+          index: ni,
+          pulse: Math.random() * Math.PI * 2,
+          pulseSpeed: 0.02 + Math.random() * 0.03
+        });
+      }
+    });
+
+    // Build connections
+    for (let li = 0; li < layers.length - 1; li++) {
+      const fromNodes = nodes.filter(n => n.layer === li);
+      const toNodes = nodes.filter(n => n.layer === li + 1);
+      fromNodes.forEach(from => {
+        toNodes.forEach(to => {
+          connections.push({
+            from, to,
+            weight: Math.random(),
+            signal: Math.random(),
+            signalSpeed: 0.005 + Math.random() * 0.01,
+            active: Math.random() > 0.3
+          });
+        });
+      });
+    }
+  }
+
+  buildNetwork();
+  window.addEventListener('resize', buildNetwork);
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw connections
+    connections.forEach(conn => {
+      if (!conn.active) return;
+      const alpha = 0.08 + conn.weight * 0.15;
+      ctx.beginPath();
+      ctx.moveTo(conn.from.x, conn.from.y);
+      ctx.lineTo(conn.to.x, conn.to.y);
+      ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // Animated signal dot
+      conn.signal += conn.signalSpeed;
+      if (conn.signal > 1) conn.signal = 0;
+      const sx = conn.from.x + (conn.to.x - conn.from.x) * conn.signal;
+      const sy = conn.from.y + (conn.to.y - conn.from.y) * conn.signal;
+      ctx.beginPath();
+      ctx.arc(sx, sy, 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0, 255, 136, 0.85)`;
+      ctx.fill();
+    });
+
+    // Draw nodes
+    nodes.forEach(node => {
+      node.pulse += node.pulseSpeed;
+      const glow = 0.5 + 0.5 * Math.sin(node.pulse);
+
+      // Outer glow ring
+      const grad = ctx.createRadialGradient(node.x, node.y, 2, node.x, node.y, 14);
+      grad.addColorStop(0, `rgba(0, 212, 255, ${0.2 * glow})`);
+      grad.addColorStop(1, 'transparent');
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, 14, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Core node
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = node.layer === 0 || node.layer === layers.length - 1
+        ? `rgba(0, 255, 136, ${0.7 + 0.3 * glow})`
+        : `rgba(0, 212, 255, ${0.7 + 0.3 * glow})`;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, 5, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(255,255,255,0.4)`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+
+  // Animated counters
+  document.querySelectorAll('.ds-stat-value').forEach(el => {
+    const target = parseFloat(el.dataset.target);
+    const isDecimal = target < 1;
+    const isLarge = target > 100;
+    let current = 0;
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      step++;
+      if (step >= steps) { current = target; clearInterval(timer); }
+      el.textContent = isDecimal
+        ? current.toFixed(3)
+        : isLarge
+        ? Math.round(current).toLocaleString()
+        : current.toFixed(1);
+    }, duration / steps);
+  });
+})();
