@@ -1335,8 +1335,7 @@ a {
   }
 
   .home-visual {
-    order: -1;
-    width: 100%;
+    display: none;
   }
 
   #ds-canvas {
@@ -1431,6 +1430,9 @@ a {
 
   .home {
     padding: 90px 4% 50px;
+  }
+  .home-visual {
+    display: none;
   }
 
   #ds-canvas {
