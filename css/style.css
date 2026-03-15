@@ -1290,7 +1290,7 @@ a {
 
 .ds-stat-value {
   font-family: var(--font-mono);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent-cyan);
 }

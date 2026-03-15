@@ -301,6 +301,50 @@ seeLessBtn.addEventListener("click", () => {
 });
 
 
+const certs2 = document.querySelectorAll(".achievement-box");
+const seeMoreBtn2 = document.getElementById("seeMoreBtn2");
+const seeLessBtn2 = document.getElementById("seeLessBtn2");
+
+let step2 = 6;
+let visibleCount2 = step;
+
+// Initial state
+certs2.forEach((cert, index) => {
+    if (index >= visibleCount2) {
+        cert.style.display = "none";
+    }
+});
+
+seeLessBtn2.style.display = "none";
+
+seeMoreBtn2.addEventListener("click", () => {
+    let shown = 0;
+
+    for (let i = visibleCount2; i < certs2.length && shown < step2; i++) {
+        certs2[i].style.display = "block";
+        shown++;
+    }
+
+    visibleCount += shown;
+
+    // When everything is visible
+    if (visibleCount >= certs2.length) {
+        seeMoreBtn2.style.display = "none";
+        seeLessBtn2.style.display = "inline-block";
+    }
+});
+
+seeLessBtn2.addEventListener("click", () => {
+    visibleCount2 = step2;
+
+    certs2.forEach((cert, index) => {
+        cert.style.display = index < step2 ? "block" : "none";
+    });
+
+    seeLessBtn2.style.display = "none";
+    seeMoreBtn2.style.display = "inline-block";
+});
+
 // ===========================
 // DATA SCIENCE CANVAS ANIMATION
 // ===========================
