@@ -263,42 +263,57 @@ const seeLessBtn = document.getElementById("seeLessBtn");
 const step = 6;
 let visibleCount = step;
 
-// Initial state
+// Initial state: hide items beyond the 6th one
 certs.forEach((cert, index) => {
     if (index >= visibleCount) {
         cert.style.display = "none";
     }
 });
 
-seeLessBtn.style.display = "none";
+// Check if there are more than 6 certificates
+if (certs.length <= step) {
+    // Hide both buttons if there are 6 or fewer certificates
+    if (seeMoreBtn) seeMoreBtn.style.display = "none";
+    if (seeLessBtn) seeLessBtn.style.display = "none";
+} else {
+    // Show "See More" and hide "See Less" initially if there are more than 6
+    if (seeMoreBtn) seeMoreBtn.style.display = "inline-block";
+    if (seeLessBtn) seeLessBtn.style.display = "none";
+}
 
-seeMoreBtn.addEventListener("click", () => {
-    let shown = 0;
+// See More Button Logic
+if (seeMoreBtn) {
+    seeMoreBtn.addEventListener("click", () => {
+        let shown = 0;
 
-    for (let i = visibleCount; i < certs.length && shown < step; i++) {
-        certs[i].style.display = "block";
-        shown++;
-    }
+        for (let i = visibleCount; i < certs.length && shown < step; i++) {
+            certs[i].style.display = "block";
+            shown++;
+        }
 
-    visibleCount += shown;
+        visibleCount += shown;
 
-    // When everything is visible
-    if (visibleCount >= certs.length) {
-        seeMoreBtn.style.display = "none";
-        seeLessBtn.style.display = "inline-block";
-    }
-});
-
-seeLessBtn.addEventListener("click", () => {
-    visibleCount = step;
-
-    certs.forEach((cert, index) => {
-        cert.style.display = index < step ? "block" : "none";
+        // When everything is visible
+        if (visibleCount >= certs.length) {
+            seeMoreBtn.style.display = "none";
+            if (seeLessBtn) seeLessBtn.style.display = "inline-block";
+        }
     });
+}
 
-    seeLessBtn.style.display = "none";
-    seeMoreBtn.style.display = "inline-block";
-});
+// See Less Button Logic
+if (seeLessBtn) {
+    seeLessBtn.addEventListener("click", () => {
+        visibleCount = step;
+
+        certs.forEach((cert, index) => {
+            cert.style.display = index < step ? "block" : "none";
+        });
+
+        seeLessBtn.style.display = "none";
+        if (seeMoreBtn) seeMoreBtn.style.display = "inline-block";
+    });
+}
 
 
 const certs2 = document.querySelectorAll(".achievement-box");
@@ -306,44 +321,59 @@ const seeMoreBtn2 = document.getElementById("seeMoreBtn2");
 const seeLessBtn2 = document.getElementById("seeLessBtn2");
 
 let step2 = 6;
-let visibleCount2 = step;
+let visibleCount2 = step2; // Fixed typo: changed 'step' to 'step2'
 
-// Initial state
+// Initial state: hide items beyond the 6th one
 certs2.forEach((cert, index) => {
     if (index >= visibleCount2) {
         cert.style.display = "none";
     }
 });
 
-seeLessBtn2.style.display = "none";
+// Check if there are more than 6 certificates
+if (certs2.length <= step2) {
+    // Hide both buttons if there are 6 or fewer certificates
+    if (seeMoreBtn2) seeMoreBtn2.style.display = "none";
+    if (seeLessBtn2) seeLessBtn2.style.display = "none";
+} else {
+    // Show "See More" and hide "See Less" initially if there are more than 6
+    if (seeMoreBtn2) seeMoreBtn2.style.display = "inline-block"; 
+    if (seeLessBtn2) seeLessBtn2.style.display = "none";
+}
 
-seeMoreBtn2.addEventListener("click", () => {
-    let shown = 0;
+// See More Button Logic
+if (seeMoreBtn2) {
+    seeMoreBtn2.addEventListener("click", () => {
+        let shown = 0;
 
-    for (let i = visibleCount2; i < certs2.length && shown < step2; i++) {
-        certs2[i].style.display = "block";
-        shown++;
-    }
+        for (let i = visibleCount2; i < certs2.length && shown < step2; i++) {
+            certs2[i].style.display = "block";
+            shown++;
+        }
 
-    visibleCount += shown;
+        visibleCount2 += shown; // Fixed typo: changed 'visibleCount' to 'visibleCount2'
 
-    // When everything is visible
-    if (visibleCount >= certs2.length) {
-        seeMoreBtn2.style.display = "none";
-        seeLessBtn2.style.display = "inline-block";
-    }
-});
-
-seeLessBtn2.addEventListener("click", () => {
-    visibleCount2 = step2;
-
-    certs2.forEach((cert, index) => {
-        cert.style.display = index < step2 ? "block" : "none";
+        // When everything becomes visible, swap buttons
+        if (visibleCount2 >= certs2.length) {
+            seeMoreBtn2.style.display = "none";
+            seeLessBtn2.style.display = "inline-block";
+        }
     });
+}
 
-    seeLessBtn2.style.display = "none";
-    seeMoreBtn2.style.display = "inline-block";
-});
+// See Less Button Logic
+if (seeLessBtn2) {
+    seeLessBtn2.addEventListener("click", () => {
+        visibleCount2 = step2;
+
+        certs2.forEach((cert, index) => {
+            cert.style.display = index < step2 ? "block" : "none";
+        });
+
+        seeLessBtn2.style.display = "none";
+        seeMoreBtn2.style.display = "inline-block";
+    });
+}
 
 // ===========================
 // DATA SCIENCE CANVAS ANIMATION
