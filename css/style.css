@@ -1221,6 +1221,7 @@ a {
 
   .experience-container,
   .education-container,
+  .recommendation-container,
   .portfolio-container {
     grid-template-columns: 1fr;
   }
@@ -1469,6 +1470,7 @@ a {
 
   .experience-container,
   .education-container,
+  .recommendation-container,
   .portfolio-container {
     grid-template-columns: 1fr;
   }
@@ -1578,3 +1580,66 @@ a {
 .achievement-box p {
   font-size: 0.8rem;
 }
+
+/* ===========================
+   EDUCATION SECTION
+=========================== */
+.recommendation {
+  padding: 100px 6%;
+}
+
+.recommendation-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.recommendation-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1.8rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.recommendation-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), transparent);
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.recommendation-box:hover {
+  border-color: var(--border-active);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.recommendation-box:hover::after { opacity: 1; }
+
+.recommendation-box h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.recommendation-box h2 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.recommendation-box p { font-size: 0.82rem; }
