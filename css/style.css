@@ -1552,6 +1552,8 @@ a {
   border-radius: 8px;
   padding: 1.5rem;
   transition: var(--transition);
+  display: flex;              /* add */
+  flex-direction: column;     /* add */
 }
 
 .achievement-box:hover {
@@ -1583,9 +1585,13 @@ a {
 
 .achievement-image {
   margin-top: 1rem;
+  margin-bottom: 1rem;        /* add — space between image and paragraph */
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
+  width: 100%;                /* add */
+  box-sizing: border-box;     /* add */
+  flex-shrink: 0;             /* add — prevents image from squishing */
 }
 
 .achievement-image img {
