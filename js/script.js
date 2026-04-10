@@ -518,3 +518,32 @@ if (seeLessBtn2) {
     }, duration / steps);
   });
 })();
+
+document.querySelectorAll('[data-slider]').forEach(slider => {
+  const track = slider.querySelector('.slider-track');
+  const imgs = track.querySelectorAll('img');
+  const dotsContainer = slider.querySelector('.slider-dots');
+  let current = 0;
+
+  // Build dots
+  imgs.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('slider-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.slider-dot');
+
+  function goTo(index) {
+    current = (index + imgs.length) % imgs.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[current].classList.add('active');
+  }
+
+  slider.querySelector('.prev').addEventListener('click', () => goTo(current - 1));
+  slider.querySelector('.next').addEventListener('click', () => goTo(current + 1));
+});
+

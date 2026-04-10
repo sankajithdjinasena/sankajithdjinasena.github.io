@@ -1606,6 +1606,80 @@ a {
   transform: scale(1.03);
 }
 
+/* Image Slider */
+.achievement-slider {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.slider-track img {
+  min-width: 100%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.slider-btn:hover {
+  background: rgba(0, 212, 255, 0.7);
+}
+
+.slider-btn.prev { left: 8px; }
+.slider-btn.next { right: 8px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.slider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.slider-dot.active {
+  background: var(--accent-cyan);
+}
+
 /* ===========================
    EDUCATION SECTION
 =========================== */
@@ -1668,3 +1742,4 @@ a {
 }
 
 .recommendation-box p { font-size: 0.82rem; }
+
