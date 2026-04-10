@@ -1743,3 +1743,116 @@ a {
 
 .recommendation-box p { font-size: 0.82rem; }
 
+
+
+/* Lightbox */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9998;
+  backdrop-filter: blur(4px);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 90vw;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lightbox.active,
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-img-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.lightbox-img-wrapper img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 212, 255, 0.6);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.lightbox-nav:hover {
+  background: rgba(0, 212, 255, 0.7);
+}
+
+.lightbox-nav.prev { left: -48px; }
+.lightbox-nav.next { right: -48px; }
+
+.lightbox-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.lightbox-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox-dots .dot.active {
+  background: var(--accent-cyan);
+}
