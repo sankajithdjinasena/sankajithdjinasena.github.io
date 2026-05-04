@@ -375,6 +375,77 @@ if (seeLessBtn2) {
     });
 }
 
+const certs3 = document.querySelectorAll(".volunteering-box");
+const seeMoreBtn3 = document.getElementById("seeMoreBtn3");
+const seeLessBtn3 = document.getElementById("seeLessBtn3");
+
+let step3 = 6;
+let visibleCount3 = step3;
+
+// Initial state: hide items beyond the 6th one
+certs3.forEach((cert, index) => {
+    if (index >= visibleCount3) {
+        cert.style.display = "none";
+    }
+});
+
+// Check if there are more than 6 items
+if (certs3.length <= step3) {
+    if (seeMoreBtn3) seeMoreBtn3.style.display = "none";
+    if (seeLessBtn3) seeLessBtn3.style.display = "none";
+} else {
+    if (seeMoreBtn3) seeMoreBtn3.style.display = "inline-block";
+    if (seeLessBtn3) seeLessBtn3.style.display = "none";
+}
+
+// See More Button Logic
+if (seeMoreBtn3) {
+    seeMoreBtn3.addEventListener("click", () => {
+        let shown = 0;
+
+        for (let i = visibleCount3; i < certs3.length && shown < step3; i++) {
+            certs3[i].style.display = "block";
+            shown++;
+        }
+
+        visibleCount3 += shown;
+
+        if (visibleCount3 >= certs3.length) {
+            seeMoreBtn3.style.display = "none";
+            seeLessBtn3.style.display = "inline-block";
+        }
+    });
+}
+
+// See Less Button Logic
+if (seeLessBtn3) {
+    seeLessBtn3.addEventListener("click", () => {
+        certs3.forEach((cert, index) => {
+            if (index >= step3) {
+                cert.style.display = "none";
+            }
+        });
+
+        visibleCount3 = step3;
+        seeLessBtn3.style.display = "none";
+        seeMoreBtn3.style.display = "inline-block";
+    });
+}
+
+// See Less Button Logic
+if (seeLessBtn3) {
+    seeLessBtn3.addEventListener("click", () => {
+        visibleCount3 = step3;
+
+        certs3.forEach((cert, index) => {
+            cert.style.display = index < step3 ? "block" : "none";
+        });
+
+        seeLessBtn3.style.display = "none";
+        seeMoreBtn3.style.display = "inline-block";
+    });
+}
+
 // ===========================
 // DATA SCIENCE CANVAS ANIMATION
 // ===========================
