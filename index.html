@@ -666,6 +666,9 @@
     <!-- Typed JS -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!--Javascript-->
     <script src="js/script.js"></script>
     <!-- EmailJS SDK -->
@@ -684,13 +687,25 @@
                 from_name: document.getElementById('name').value,
                 reply_to: document.getElementById('email').value
             })
-                .then(function (response) {
-                    alert("Message sent successfully!");
-                    form.reset(); // clear form
-                }, function (error) {
-                    alert("Failed to send message. Please try again.");
-                    console.log(error);
+            .then(function (response) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'Your message has been sent successfully.',
+                    confirmButtonText: 'OK'
                 });
+
+                form.reset();
+            }, function (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Failed to send message. Please try again.',
+                    confirmButtonText: 'Try Again'
+                });
+
+                console.log(error);
+            });
         });
     </script>
 
