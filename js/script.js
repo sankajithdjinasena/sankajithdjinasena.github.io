@@ -77,71 +77,6 @@ window.addEventListener('scroll', revealOnScroll);
 // Initial call to check for elements in view
 revealOnScroll();
 
-// Form submission handling
-const contactForm = document.querySelector('.contact form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const submitBtn = contactForm.querySelector('input[type="submit"]');
-        const originalText = submitBtn.value;
-        
-        // Show loading state
-        submitBtn.value = 'Sending...';
-        submitBtn.disabled = true;
-        
-        try {
-            // Here you would normally make an API call
-            // For demo, we'll simulate a delay
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'success-message';
-            successMessage.textContent = 'Message sent successfully!';
-            successMessage.style.cssText = `
-                background: linear-gradient(135deg, #10b981, #3b82f6);
-                color: white;
-                padding: 1.5rem;
-                border-radius: 0.5rem;
-                margin-top: 2rem;
-                text-align: center;
-                animation: fadeIn 0.5s ease;
-            `;
-            
-            contactForm.appendChild(successMessage);
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Remove success message after 3 seconds
-            setTimeout(() => {
-                successMessage.style.animation = 'fadeOut 0.5s ease';
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 500);
-            }, 3000);
-            
-        } catch (error) {
-            console.error('Error sending message:', error);
-            alert('There was an error sending your message. Please try again.');
-        } finally {
-            submitBtn.value = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-// Add fadeOut animation for success message
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeOut {
-        from { opacity: 1; transform: translateY(0); }
-        to { opacity: 0; transform: translateY(-10px); }
-    }
-`;
-document.head.appendChild(style);
-
 // Card hover effects with animation
 const cards = document.querySelectorAll('.experience-box, .education-box, .portfolio-box, .technical-skill-box');
 
@@ -414,21 +349,6 @@ if (seeMoreBtn3) {
             seeMoreBtn3.style.display = "none";
             seeLessBtn3.style.display = "inline-block";
         }
-    });
-}
-
-// See Less Button Logic
-if (seeLessBtn3) {
-    seeLessBtn3.addEventListener("click", () => {
-        certs3.forEach((cert, index) => {
-            if (index >= step3) {
-                cert.style.display = "none";
-            }
-        });
-
-        visibleCount3 = step3;
-        seeLessBtn3.style.display = "none";
-        seeMoreBtn3.style.display = "inline-block";
     });
 }
 
