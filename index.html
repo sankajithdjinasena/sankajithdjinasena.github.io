@@ -33,12 +33,7 @@
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
-            <a href="#certification">Certifications</a>
-            <a href="#skills">Skills</a>
             <a href="#project">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#volunteering">Volunteering</a>
-            <a href="#recommendation">References</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -74,10 +69,10 @@
             <!-- CV Button -->
             <div class="detail-btn">
                 <a href="Sankajith D. Jinasena.pdf" target="_blank" class="btn">
-                    <span>Download CV</span>
+                    <span><i class='bx bx-download' style="margin-right: 0.4rem; vertical-align: middle;"></i>Download CV</span>
                 </a>
                 <a href="#contact" class="btn">
-                    <span>Contact Me</span>
+                    <span><i class='bx bx-paper-plane' style="margin-right: 0.4rem; vertical-align: middle;"></i>Contact Me</span>
                 </a>
             </div>
 
@@ -317,12 +312,21 @@
     <section class="project" id="project">
         <h2 class="heading">Latest <span>Projects</span></h2>
 
-        <!-- Power BI Business Intelligence Projects -->
-        <div class="portfolio-container">
-            <div class="portfolio-box">
+        <!-- Category Filter Navigation -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="powerbi">📊 Power BI</button>
+            <button class="filter-btn" data-filter="analytics">📈 Data Analysis</button>
+            <button class="filter-btn" data-filter="ai">🤖 AI & Multi-Agent</button>
+            <button class="filter-btn" data-filter="web">🌐 Full-Stack & Web</button>
+        </div>
+
+        <div class="portfolio-container" id="projects-grid">
+            <!-- Project 1: Electricity Affordability -->
+            <div class="portfolio-box" data-category="powerbi analytics">
                 <h3>Powering Through Crisis: Sri Lanka Residential Electricity Affordability Analysis</h3>
-                <h4><br>2026 Sep</h4>
-                <div class="achievement-slider" data-slider style="margin: 0.5rem 0 1rem;">
+                <h4>2026 Sep</h4>
+                <div class="achievement-slider" data-slider style="margin: 0.5rem 0;">
                     <div class="slider-track">
                         <img src="images/Projects/ElectricityAffordability/page1.jpg" alt="Energy Poverty Analysis">
                         <img src="images/Projects/ElectricityAffordability/page2.jpg" alt="Electricity Consumption Overview">
@@ -333,19 +337,26 @@
                     <div class="slider-dots"></div>
                 </div>
                 <p>Analyzed 4,063 households in LECO service area (RECON-SL dataset, IEEE DataPort) post-economic crisis. 
-                    Built a 3-page interactive Power BI dashboard uncovering energy poverty: poorest households (SEC E) spend 1.72% of income on power (more than double wealthy households at 0.75%), 13.83% faced disconnection, and 64.8% lack bill calculation awareness.
+                    Built a 3-page interactive Power BI dashboard uncovering energy poverty: poorest households spend 1.72% of income on power (vs 0.75% for wealthy), 13.83% faced disconnection, and 64.8% lack bill calculation awareness.
                 </p>
-                <p><b>Technologies:</b> Power BI, DAX, Power Query, Star Schema Data Modeling, Business Intelligence</p>
+                <div class="tech-pills">
+                    <span class="tech-pill">Power BI</span>
+                    <span class="tech-pill">DAX</span>
+                    <span class="tech-pill">Power Query</span>
+                    <span class="tech-pill">Star Schema</span>
+                    <span class="tech-pill">Data Analytics</span>
+                </div>
                 <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
-                    <a href="https://lnkd.in/eUedHW7t" target="_blank" title="View Power BI Project"><i style="font-size: 20px;" class='bx bx-link-external'></i> View Project</a>
-                    <a href="https://lnkd.in/eKVUSafK" target="_blank" title="Download Dashboard PDF"><i style="font-size: 20px;" class='bx bxs-file-pdf'></i> Dashboard PDF</a>
+                    <a href="https://lnkd.in/eUedHW7t" target="_blank" title="View Power BI Project"><i class='bx bx-link-external'></i> View Project</a>
+                    <a href="https://lnkd.in/eKVUSafK" target="_blank" title="Download Dashboard PDF"><i class='bx bxs-file-pdf'></i> Dashboard PDF</a>
                 </div>
             </div>
 
-            <div class="portfolio-box">
+            <!-- Project 2: Uber Trip Analysis -->
+            <div class="portfolio-box" data-category="powerbi analytics">
                 <h3>Uber Trip Analysis & Booking Behavior Dashboard</h3>
-                <h4><br>2026 Sep</h4>
-                <div class="achievement-slider" data-slider style="margin: 0.5rem 0 1rem;">
+                <h4>2026 Sep</h4>
+                <div class="achievement-slider" data-slider style="margin: 0.5rem 0;">
                     <div class="slider-track">
                         <img src="images/Projects/UberTripAnalysis/overview.jpg" alt="Uber Trip Overview Analysis">
                         <img src="images/Projects/UberTripAnalysis/time_analysis.jpg" alt="Uber Trip Time Analysis">
@@ -355,182 +366,245 @@
                     <div class="slider-dots"></div>
                 </div>
                 <p>Explored 39.6K Uber bookings ($590.3K booking value, 134K trip miles) to uncover key travel and revenue patterns. 
-                    Built interactive Power BI dashboards combining KPI cards, day vs. night trip breakdowns, pickup/drop-off location heatmaps, vehicle preferences (UberX leading with 15.2K bookings), and hourly/daily time-series trends.
+                    Built interactive Power BI dashboards combining KPI cards, day vs. night trip breakdowns, pickup/drop-off location heatmaps, vehicle preferences (UberX leading), and hourly/daily time-series trends.
                 </p>
-                <p><b>Technologies:</b> Power BI, DAX, Business Intelligence, Data Analysis, Data Storytelling</p>
-                <a href="https://www.linkedin.com/in/sankajithdjinasena/" target="_blank" title="View Project on LinkedIn"><i style="font-size: 20px;" class='bx bx-link-external'></i> View on LinkedIn</a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Power BI</span>
+                    <span class="tech-pill">DAX</span>
+                    <span class="tech-pill">Business Intelligence</span>
+                    <span class="tech-pill">Time-Series</span>
+                    <span class="tech-pill">Heatmaps</span>
+                </div>
+                <a href="https://www.linkedin.com/in/sankajithdjinasena/" target="_blank" title="View Project on LinkedIn"><i class='bx bx-link-external'></i> View on LinkedIn</a>
             </div>
-        </div>
 
-        <div class="portfolio-container">
-            <div class="portfolio-box">
+            <!-- Project 3: CareerCompass AI -->
+            <div class="portfolio-box" data-category="ai">
                 <h3>CareerCompass AI - Autonomous Career Coaching</h3>
-                <h4><br>2026 Aug</h4>
+                <h4>2026 Aug</h4>
                 <p>A Level 3 autonomous, LangGraph-orchestrated 5-agent career coaching system featuring adaptive mock interviews, 
                     real-time job and course web search, and self-correcting JSON validation loops for career planning.
                 </p>
-                <p><b>Technologies:</b> Python, React, FastAPI, LangChain, LLMs, Multi-Agent AI</p>
-                <a href="https://github.com/sankajithdjinasena" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">React</span>
+                    <span class="tech-pill">FastAPI</span>
+                    <span class="tech-pill">LangChain</span>
+                    <span class="tech-pill">LLMs</span>
+                    <span class="tech-pill">Multi-Agent AI</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
 
-            <div class="portfolio-box">
+            <!-- Project 4: AgriAgent -->
+            <div class="portfolio-box" data-category="ai web">
                 <h3>AgriAgent - Multilingual AI Farm Advisory System</h3>
-                <h4><br>2026 Aug</h4>
+                <h4>2026 Aug</h4>
                 <p>A trilingual (English, Sinhala, Tamil) AI farm advisory application with a FAISS-indexed knowledge base 
                     and Groq LLM agents providing real-time crop advisory, weather forecasts, fertilizer recommendations, and market-price analysis.
                 </p>
-                <p><b>Technologies:</b> Python, FastAPI, HTML, CSS, JS, Groq LLM, FAISS, Sentence Transformers</p>
-                <a href="https://github.com/sankajithdjinasena" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">FastAPI</span>
+                    <span class="tech-pill">Groq LLM</span>
+                    <span class="tech-pill">FAISS</span>
+                    <span class="tech-pill">Sentence Transformers</span>
+                    <span class="tech-pill">HTML/CSS/JS</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
 
-            <div class="portfolio-box">
+            <!-- Project 5: NEXLAB -->
+            <div class="portfolio-box" data-category="web">
                 <h3>NEXLAB - Smart Resource Booking Platform</h3>
-                <h4><br>2026 Jul</h4>
+                <h4>2026 Jul</h4>
                 <p>A centralized university resource-booking platform with role-based access for students, faculty, and administrators. 
                     Uses priority-based scheduling for conflict-free allocation and dynamic waitlist routing for over-capacity requests.
                 </p>
-                <p><b>Technologies:</b> PHP, MySQL, HTML, CSS, JavaScript</p>
-                <a href="https://github.com/sankajithdjinasena" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">PHP</span>
+                    <span class="tech-pill">MySQL</span>
+                    <span class="tech-pill">HTML5</span>
+                    <span class="tech-pill">CSS3</span>
+                    <span class="tech-pill">JavaScript</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
-        </div>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
+
+            <!-- Project 6: CSV Data Analyzer -->
+            <div class="portfolio-box" data-category="analytics ai">
                 <h3>CSV Data Analyzer</h3>
-                <h4><br>2026 Jan - 2026 Feb</h4>
+                <h4>2026 Jan - 2026 Feb</h4>
                 <p>A Python-based desktop application that enables users to efficiently explore, clean, 
                     visualize, and analyze CSV datasets through an intuitive graphical interface. 
-                    The application provides real-time data previews, automated data cleaning options, 
-                    interactive visualizations, and comprehensive statistical insights without requiring manual coding.
+                    Provides real-time data previews, automated data cleaning, interactive plots, and comprehensive statistical insights.
                 </p>
-                <p><b>Technologies:</b> Scikit-learn, Flask, Tkinter</p>
-                <a href="https://github.com/sankajithdjinasena/PythonMiniProjects/tree/main/CSV_Analyzer" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Scikit-learn</span>
+                    <span class="tech-pill">Tkinter</span>
+                    <span class="tech-pill">Flask</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/PythonMiniProjects/tree/main/CSV_Analyzer" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
-            <div class="portfolio-box">
+
+            <!-- Project 7: Smart Animal Watcher -->
+            <div class="portfolio-box" data-category="ai web">
                 <h3>Smart Animal Watcher</h3>
-                <h4><br>2026 Jan - 2026 Feb</h4>
-                <p>A real-time AI-powered surveillance system that detects animals 
-                    entering a home environment, classifies them as safe or dangerous, 
-                    and sends instant email alerts for potential threats. This system 
-                    uses a webcam, YOLO object detection, and a Flask-based web dashboard.
+                <h4>2026 Jan - 2026 Feb</h4>
+                <p>A real-time AI-powered surveillance system that detects animals entering a home environment, 
+                    classifies them as safe or dangerous, and sends instant email alerts for potential threats using YOLO object detection and OpenCV.
                 </p>
-                <p><b>Technologies:</b> Scikit-learn, Flask, HTML, openCV</p>
-                <a href="https://github.com/sankajithdjinasena/SmartAnimalWatcher" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">YOLO</span>
+                    <span class="tech-pill">OpenCV</span>
+                    <span class="tech-pill">Scikit-learn</span>
+                    <span class="tech-pill">Flask</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/SmartAnimalWatcher" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
-        </div>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
+
+            <!-- Project 8: WellTrackeR -->
+            <div class="portfolio-box" data-category="web ai">
                 <h3>WellTrackeR – AI-Powered Personal Health</h3>
-                <h4>Associated with Sabaragamuwa University of Sri Lanka<br>2025 Aug - 2025 Nov</h4>
-                <p>Developed a web-based health tracker with AI-driven 
-                    predictions, personalized recommendations, and 
-                    dashboards for users and doctors, integrating full-stack 
-                    development with machine learning for preventive 
-                    healthcare insights.
+                <h4>Associated with Sabaragamuwa University | 2025 Aug - 2025 Nov</h4>
+                <p>Web-based health tracker with AI-driven predictions, personalized recommendations, and 
+                    dashboards for users and doctors, integrating full-stack development with machine learning for preventive healthcare.
                 </p>
-                <p><b>Technologies:</b> HTML, CSS, JS, PHP, Python(Scikit-learn, Flask), MySQL</p>
-                <a href="https://github.com/sankajithdjinasena/WelltackerR" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">PHP</span>
+                    <span class="tech-pill">MySQL</span>
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Scikit-learn</span>
+                    <span class="tech-pill">Flask</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/WelltackerR" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
 
-            <div class="portfolio-box">
+            <!-- Project 9: Microsoft Stock Probability Analysis -->
+            <div class="portfolio-box" data-category="analytics">
                 <h3>Microsoft Stock Probability Analysis</h3>
-                <h4>Associated with Sabaragamuwa University of Sri Lanka<br>2025 Aug - 2025 Nov</h4>
-                <p>This project analyzes nearly four decades of Microsoft 
-                    stock price 1986 - 2025 data using probability theory and 
-                    statistical models to study return behavior, risk metrics, 
-                    and future price simulations. 
+                <h4>Associated with Sabaragamuwa University | 2025 Aug - 2025 Nov</h4>
+                <p>Analyzed nearly four decades of Microsoft stock price data (1986 - 2025) using probability theory and 
+                    statistical models to study return behavior, risk metrics (VaR/CVaR), and Monte Carlo price simulations.
                 </p>
-                <p><b>Technologies:</b> Python (Pandas, Numpy, Matplotlib, Seaborn)</p>
-                <a href="https://github.com/sankajithdjinasena/MicrosoftStockAnalyzeUsingProbability" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
-
-            </div>
-        </div>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <h3>Bus Management System - Ridesync</h3>
-                <h4>Associated with Sabaragamuwa University of Sri Lanka<br>2025 Feb - 2025 Jun</h4>
-                <p>RideSync is a web-based prototype designed to modernize public transport administration by
-                    integrating route scheduling, digital ticket booking, fleet management, and user feedback into a
-                    centralized platform.
-                </p>
-                <p><b>Technologies:</b> HTML, CSS, JS, PHP, MySQL</p>
-
-                <a href="https://github.com/sankajithdjinasena/BusManagementSystem" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Pandas</span>
+                    <span class="tech-pill">NumPy</span>
+                    <span class="tech-pill">Matplotlib</span>
+                    <span class="tech-pill">Seaborn</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/MicrosoftStockAnalyzeUsingProbability" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
 
-            <div class="portfolio-box">
-                <h3>
-                    User Behavior Classification Based on Mobile Device Usage</h3>
-                <h4>Associated with Sabaragamuwa University of Sri Lanka<br>2024 Sep - 2024 Oct</h4>
-                <p>This project explored the relationship between mobile device usage patterns and user behavior classes
-                    using a real-world dataset from Kaggle. It involved the full data science pipeline, from cleaning
-                    and preprocessing to building and deploying a predictive model.
+            <!-- Project 10: Bus Management System - Ridesync -->
+            <div class="portfolio-box" data-category="web">
+                <h3>Bus Management System - RideSync</h3>
+                <h4>Associated with Sabaragamuwa University | 2025 Feb - 2025 Jun</h4>
+                <p>RideSync is a web prototype modernizing public transport administration by integrating route scheduling, 
+                    digital ticket booking, fleet management, and passenger feedback into a centralized platform.
                 </p>
-                <p><b>Technologies:</b> HTML, CSS, JS, PHP, Python(Scikit-learn, Flask), MySQL</p>
-                <a href="https://github.com/sankajithdjinasena/UserBehaviorClassPredictor" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
-
+                <div class="tech-pills">
+                    <span class="tech-pill">PHP</span>
+                    <span class="tech-pill">MySQL</span>
+                    <span class="tech-pill">HTML5</span>
+                    <span class="tech-pill">CSS3</span>
+                    <span class="tech-pill">JavaScript</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/BusManagementSystem" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
 
-            <div class="portfolio-box">
-                <h3>Water Quality Prediction System - Hydroscan</h3>
-                <h4><br>2025 Jan - 2025 Mar</h4>
-                <p>Hydroscan is a machine learning-based water quality prediction system developed. It analyzes
-                    historical environmental data to classify and forecast water quality levels. The solution integrates
-                    regression and classification models into a full-stack web application.
+            <!-- Project 11: Mobile User Behavior Classification -->
+            <div class="portfolio-box" data-category="ai analytics">
+                <h3>User Behavior Classification (Mobile Usage)</h3>
+                <h4>Associated with Sabaragamuwa University | 2024 Sep - 2024 Oct</h4>
+                <p>Explored mobile device usage patterns to classify user behavior using real-world Kaggle datasets. 
+                    Executed the full data science pipeline from data cleaning/EDA to training predictive ML classifiers.
                 </p>
-                <p><b>Technologies:</b> HTML, CSS, JS, PHP, Python(Scikit-learn, Flask), MySQL</p>
-                <a href="https://github.com/sankajithdjinasena/WaterQualityPredictor" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Scikit-learn</span>
+                    <span class="tech-pill">Flask</span>
+                    <span class="tech-pill">PHP</span>
+                    <span class="tech-pill">MySQL</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/UserBehaviorClassPredictor" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
-        </div>
-        <br>
-        <!--Project 2-->
-        <div class="portfolio-container">
-            
-            <div class="portfolio-box">
+
+            <!-- Project 12: Hydroscan Water Quality Prediction -->
+            <div class="portfolio-box" data-category="ai web">
+                <h3>Hydroscan - Water Quality Prediction</h3>
+                <h4>2025 Jan - 2025 Mar</h4>
+                <p>Machine learning-based environmental prediction system forecasting water quality levels from historical data. 
+                    Integrates regression and classification models into an interactive web application.
+                </p>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Scikit-learn</span>
+                    <span class="tech-pill">Flask</span>
+                    <span class="tech-pill">PHP</span>
+                    <span class="tech-pill">MySQL</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/WaterQualityPredictor" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
+            </div>
+
+            <!-- Project 13: AI Financial Market Analysis -->
+            <div class="portfolio-box" data-category="analytics">
                 <h3>AI Financial Market Data Analysis</h3>
-                <h4><br>2025 Aug - 2025 Aug</h4>
-                <p>This project analyzes a synthetic time-series financial dataset of companies involved in Artificial
-                    Intelligence (AI), including OpenAI, Google, and Meta.
+                <h4>2025 Aug</h4>
+                <p>Analyzed time-series financial dataset of prominent Artificial Intelligence companies (OpenAI, Google, Meta), 
+                    examining stock volatility, market performance trends, and sector growth metrics.
                 </p>
-                <p><b>Technologies:</b>Python(Pandas, Numpy, Matplotlib, Seaborn)</p>
-
-                <a
-                    href="https://github.com/sankajithdjinasena/DataAnalysisProjects/tree/main/AI_Financial_Market_Data_Analysis" target="_blank"><i
-                        style="font-size: 24px;" class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Pandas</span>
+                    <span class="tech-pill">NumPy</span>
+                    <span class="tech-pill">Matplotlib</span>
+                    <span class="tech-pill">Seaborn</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/DataAnalysisProjects/tree/main/AI_Financial_Market_Data_Analysis" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
 
-            <div class="portfolio-box">
+            <!-- Project 14: Netflix Data Analysis -->
+            <div class="portfolio-box" data-category="analytics">
                 <h3>Netflix Data Analysis</h3>
-                <h4><br>2024 Aug - 2025 Aug</h4>
-                <p>This project analyzes the Netflix Dataset which contains detailed information about Movies and TV
-                    Shows available on Netflix. The data was collected from Flixable, a third-party Netflix search
-                    engine.
+                <h4>2024 Aug - 2025 Aug</h4>
+                <p>Exploratory data analysis of Netflix Movies and TV Shows dataset. 
+                    Visualized genre distributions, content rating trends, country-level production, and release year trajectories.
                 </p>
-                <p><b>Technologies:</b>Python(Pandas, Numpy, Matplotlib, Seaborn)</p>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Pandas</span>
+                    <span class="tech-pill">NumPy</span>
+                    <span class="tech-pill">Matplotlib</span>
+                    <span class="tech-pill">Seaborn</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/DataAnalysisProjects/tree/main/Netflix_Analysis" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
+            </div>
 
-                <a href="https://github.com/sankajithdjinasena/DataAnalysisProjects/tree/main/Netflix_Analysis" target="_blank"><i
-                        style="font-size: 24px;" class='bx bx-link-external'></i></a>
-            </div>
-            <div class="portfolio-box">
+            <!-- Project 15: Maternal Health Risk Predictor -->
+            <div class="portfolio-box" data-category="ai web">
                 <h3>Maternal Health Risk Predictor</h3>
-                <h4><br>2024 Sep - 2025 Sep</h4>
-                <p>A healthcare dataset collected from hospitals and clinics using IoT-based monitoring systems. It
-                    contains key health attributes of pregnant women, including age, blood pressure, blood sugar, and
-                    heart rate, with a predicted risk level to support maternal health analysis and risk prediction.
+                <h4>2024 Sep - 2025 Sep</h4>
+                <p>IoT-integrated healthcare system analyzing physiological attributes of pregnant women (age, blood pressure, sugar, heart rate) 
+                    to predict risk levels and assist maternal health assessment.
                 </p>
-                <p><b>Technologies:</b> HTML, CSS, Python(Scikit-learn, Numpy, Pandas Flask)</p>
-                <a href="https://github.com/sankajithdjinasena/Maternal_Health_Risk_Model" target="_blank"><i style="font-size: 24px;"
-                        class='bx bx-link-external'></i></a>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Scikit-learn</span>
+                    <span class="tech-pill">Flask</span>
+                    <span class="tech-pill">HTML/CSS</span>
+                </div>
+                <a href="https://github.com/sankajithdjinasena/Maternal_Health_Risk_Model" target="_blank"><i class='bx bx-link-external'></i> View Project</a>
             </div>
+        </div>
+
+        <!-- 5-by-5 Project Pagination Buttons -->
+        <div class="btn-container" style="margin-top: 2rem;">
+            <button id="seeMoreProjectsBtn" class="see-more-btn">See More Projects</button>
+            <button id="seeLessProjectsBtn" class="see-more-btn">See Less</button>
         </div>
     </section>
 
