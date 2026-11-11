@@ -70,7 +70,7 @@ export const portfolioData = {
     email: "sankajithdjinasena@gmail.com",
     mobile: "+94 71 354 5642",
     location: "Kandy, Sri Lanka",
-    portfolioUrl: "https://sankajithdjinasena.github.io/Portfolio",
+    portfolioUrl: "https://sankajithdjinasena.github.io",
   },
 
   techStack: [
@@ -131,6 +131,7 @@ export const portfolioData = {
       degree: "BSc (Hons) in Data Science",
       institution: "Sabaragamuwa University of Sri Lanka",
       period: "2024 - Present | CGPA: 3.76",
+      logo: "/images/susl.png",
       description: "Coursework spanning machine learning, artificial intelligence, data analytics, and software engineering, applied through academic and independent projects."
     },
     {
@@ -138,6 +139,7 @@ export const portfolioData = {
       degree: "GCE Advanced Level Examination (Physical Science Stream)",
       institution: "Dharmaraja College, Kandy",
       period: "2021 - 2022 | Z-score: 1.3509",
+      logo: "/images/dharmaraja.png",
       description: "Completed Advanced Level Examination in Physical Science stream including Combined Mathematics, Physics, and Chemistry."
     },
     {
@@ -145,6 +147,7 @@ export const portfolioData = {
       degree: "GCE Ordinary Level Examination",
       institution: "Dharmaraja College, Kandy",
       period: "2008 - 2019",
+      logo: "/images/dharmaraja.png",
       description: "Completed O/L examination passing with 8A's and 1B, with additional secondary subject distinction."
     }
   ],
