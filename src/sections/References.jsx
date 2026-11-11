@@ -1,9 +1,8 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Users, Mail, Phone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const References: React.FC = () => {
+const References = () => {
   const { references } = portfolioData;
 
   return (

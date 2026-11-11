@@ -4,7 +4,7 @@ import { Trophy, ChevronDown, ChevronUp } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import PhotoSlider from '../components/PhotoSlider';
 
-const Achievements: React.FC = () => {
+const Achievements = () => {
   const { achievements } = portfolioData;
   const [showAll, setShowAll] = useState(false);
 

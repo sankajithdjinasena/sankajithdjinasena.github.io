@@ -4,7 +4,7 @@ import { HeartHandshake, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import PhotoSlider from '../components/PhotoSlider';
 
-const Volunteering: React.FC = () => {
+const Volunteering = () => {
   const { volunteering } = portfolioData;
   const [showAll, setShowAll] = useState(false);
 

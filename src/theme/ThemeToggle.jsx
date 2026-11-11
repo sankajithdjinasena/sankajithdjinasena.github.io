@@ -1,23 +1,21 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Sun, Moon } from 'lucide-react';
 
-type Theme = 'dark' | 'light';
-
 const STORAGE_KEY = 'theme-preference';
 
-function getStoredTheme(): Theme {
+function getStoredTheme() {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === 'light' || stored === 'dark') {
       return stored;
     }
   } catch {
-    // localStorage unavailable (e.g. private browsing)
+    // localStorage unavailable
   }
   return 'dark';
 }
 
-function persistTheme(theme: Theme): void {
+function persistTheme(theme) {
   try {
     localStorage.setItem(STORAGE_KEY, theme);
   } catch {
@@ -25,15 +23,15 @@ function persistTheme(theme: Theme): void {
   }
 }
 
-const ThemeToggle: React.FC = () => {
-  const [theme, setTheme] = useState<Theme>(getStoredTheme);
+const ThemeToggle = () => {
+  const [theme, setTheme] = useState(getStoredTheme);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     persistTheme(theme);
   }, [theme]);
 
-  const toggle = useCallback((): void => {
+  const toggle = useCallback(() => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   }, []);
 

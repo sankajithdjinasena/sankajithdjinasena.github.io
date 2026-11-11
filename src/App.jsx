@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Instagram, Github, Mail, Facebook } from 'lucide-react';
+import { Linkedin, Instagram, Github, Mail } from 'lucide-react';
 import Navbar from './components/Navbar';
 import CursorGlow from './components/CursorGlow';
 import BackgroundEffects from './components/BackgroundEffects';
@@ -16,7 +16,7 @@ import References from './sections/References';
 import Contact from './sections/Contact';
 import { portfolioData } from './data/portfolioData';
 
-const App: React.FC = () => {
+const App = () => {
   const { personal, socials } = portfolioData;
 
   return (

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, ShieldCheck, Award, ChevronDown, ChevronUp } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const Certifications: React.FC = () => {
+const Certifications = () => {
   const { certifications } = portfolioData;
   const [showAll, setShowAll] = useState(false);
 

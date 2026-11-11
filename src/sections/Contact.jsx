@@ -3,15 +3,7 @@ import { motion } from 'motion/react';
 import { Mail, Linkedin, Github, Send, Phone, MapPin, Clock, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-interface FormState {
-  name: string;
-  email: string;
-  mobile: string;
-  subject: string;
-  message: string;
-}
-
-const initialFormState: FormState = {
+const initialFormState = {
   name: '',
   email: '',
   mobile: '',
@@ -19,18 +11,18 @@ const initialFormState: FormState = {
   message: '',
 };
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const { socials } = portfolioData;
-  const [formData, setFormData] = useState<FormState>(initialFormState);
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState(initialFormState);
+  const [status, setStatus] = useState('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
@@ -64,7 +56,7 @@ const Contact: React.FC = () => {
         const errorText = await response.text();
         throw new Error(errorText || 'Failed to send message via EmailJS');
       }
-    } catch (err: unknown) {
+    } catch (err) {
       console.error('EmailJS error:', err);
       setStatus('error');
       setErrorMessage(

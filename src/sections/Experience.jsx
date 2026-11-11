@@ -1,16 +1,16 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const getAssetPath = (path: string) => {
+const getAssetPath = (path) => {
+  if (!path) return '';
   if (path.startsWith('http')) return path;
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   return `${base}${cleanPath}`;
 };
 
-const Experience: React.FC = () => {
+const Experience = () => {
   const { workExperience } = portfolioData;
 
   return (

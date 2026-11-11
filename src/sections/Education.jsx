@@ -1,9 +1,8 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { GraduationCap, Calendar } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const Education: React.FC = () => {
+const Education = () => {
   const { education } = portfolioData;
 
   return (

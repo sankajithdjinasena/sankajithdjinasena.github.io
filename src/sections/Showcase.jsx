@@ -6,11 +6,9 @@ import {
   FileText,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
   Bot,
   BarChart3,
   Globe,
-  Database,
   Layers,
   CheckCircle2,
   Cpu,
@@ -18,11 +16,11 @@ import {
   Play,
   Pause
 } from 'lucide-react';
-import { portfolioData, ProjectItem } from '../data/portfolioData';
+import { portfolioData } from '../data/portfolioData';
 
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const EASE = [0.16, 1, 0.3, 1];
 
-const getImagePath = (path: string | null) => {
+const getImagePath = (path) => {
   if (!path) return null;
   if (path.startsWith('http')) return path;
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -30,9 +28,9 @@ const getImagePath = (path: string | null) => {
   return `${base}${cleanPath}`;
 };
 
-const Showcase: React.FC = () => {
+const Showcase = () => {
   const { projects } = portfolioData;
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'ai' | 'powerbi' | 'analytics' | 'web'>('all');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -55,7 +53,7 @@ const Showcase: React.FC = () => {
     setActiveImageIndex(0);
   }, [selectedCategory]);
 
-  const currentProject: ProjectItem = filteredProjects[currentIndex] || filteredProjects[0];
+  const currentProject = filteredProjects[currentIndex] || filteredProjects[0];
 
   const nextProject = () => {
     setDirection(1);
@@ -84,8 +82,8 @@ const Showcase: React.FC = () => {
 
   // Keyboard navigation (Left / Right arrow keys)
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
+    const handleKeyDown = (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(e.target?.tagName)) return;
       if (e.key === 'ArrowRight') nextProject();
       if (e.key === 'ArrowLeft') prevProject();
     };
@@ -95,20 +93,20 @@ const Showcase: React.FC = () => {
   }, [filteredProjects.length]);
 
   // Touch gesture support
-  const touchStartX = useRef<number | null>(null);
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const touchStartX = useRef(null);
+  const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
-  const handleTouchEnd = (e: React.TouchEvent) => {
+  const handleTouchEnd = (e) => {
     if (touchStartX.current === null) return;
     const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (diff > 50) nextProject(); // Swiped left -> next
-    if (diff < -50) prevProject(); // Swiped right -> prev
+    if (diff > 50) nextProject();
+    if (diff < -50) prevProject();
     touchStartX.current = null;
   };
 
   const slideVariants = {
-    enter: (dir: number) => ({
+    enter: (dir) => ({
       x: dir > 0 ? 50 : -50,
       opacity: 0,
       filter: 'blur(4px)',
@@ -122,7 +120,7 @@ const Showcase: React.FC = () => {
         ease: EASE,
       },
     },
-    exit: (dir: number) => ({
+    exit: (dir) => ({
       x: dir > 0 ? -50 : 50,
       opacity: 0,
       filter: 'blur(4px)',
@@ -133,8 +131,7 @@ const Showcase: React.FC = () => {
     }),
   };
 
-  // Helper icon for blueprint placeholder
-  const getCategoryIcon = (category: string) => {
+  const getCategoryIcon = (category) => {
     switch (category) {
       case 'ai':
         return <Bot className="w-12 h-12 text-moonstone" />;
@@ -148,7 +145,6 @@ const Showcase: React.FC = () => {
     }
   };
 
-  // Images for the active project
   const availableImages = currentProject.images && currentProject.images.length > 0
     ? currentProject.images
     : currentProject.image
@@ -156,7 +152,6 @@ const Showcase: React.FC = () => {
     : [];
 
   const currentActiveImage = availableImages[activeImageIndex] || null;
-
   const targetLink = currentProject.github || currentProject.live || currentProject.pdf;
 
   return (
@@ -179,14 +174,12 @@ const Showcase: React.FC = () => {
 
         {/* Filter Pills */}
         <div className="flex flex-wrap items-center gap-2">
-          {(
-            [
-              { key: 'all', label: 'All Projects' },
-              { key: 'ai', label: 'AI & Machine Learning' },
-              { key: 'powerbi', label: 'Power BI & Analytics' },
-              { key: 'web', label: 'Web Applications' },
-            ] as const
-          ).map((tab) => (
+          {[
+            { key: 'all', label: 'All Projects' },
+            { key: 'ai', label: 'AI & Machine Learning' },
+            { key: 'powerbi', label: 'Power BI & Analytics' },
+            { key: 'web', label: 'Web Applications' },
+          ].map((tab) => (
             <button
               key={tab.key}
               onClick={() => setSelectedCategory(tab.key)}

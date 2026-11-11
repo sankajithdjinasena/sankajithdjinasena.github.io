@@ -3,14 +3,15 @@ import { motion } from 'motion/react';
 import { Download, Mail, ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const getAssetPath = (path: string) => {
+const getAssetPath = (path) => {
+  if (!path) return '';
   if (path.startsWith('http')) return path;
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   return `${base}${cleanPath}`;
 };
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const { personal } = portfolioData;
 
   const containerVariants = {
@@ -29,7 +30,7 @@ const Hero: React.FC = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
     },
   };
 

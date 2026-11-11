@@ -1,19 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, ZoomIn, X } from 'lucide-react';
 
-interface PhotoSliderProps {
-  photos: string[];
-  title: string;
-}
-
-const getImagePath = (path: string) => {
+const getImagePath = (path) => {
+  if (!path) return '';
   if (path.startsWith('http')) return path;
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   return `${base}${cleanPath}`;
 };
 
-export const PhotoSlider: React.FC<PhotoSliderProps> = ({ photos, title }) => {
+export const PhotoSlider = ({ photos, title }) => {
   const [current, setCurrent] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -21,19 +17,19 @@ export const PhotoSlider: React.FC<PhotoSliderProps> = ({ photos, title }) => {
     return null;
   }
 
-  const prev = (e?: React.MouseEvent) => {
+  const prev = (e) => {
     if (e) e.stopPropagation();
     setCurrent((prevIdx) => (prevIdx - 1 + photos.length) % photos.length);
   };
 
-  const next = (e?: React.MouseEvent) => {
+  const next = (e) => {
     if (e) e.stopPropagation();
     setCurrent((prevIdx) => (prevIdx + 1) % photos.length);
   };
 
   // Keyboard navigation for lightbox
   const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
+    (e) => {
       if (!lightboxOpen) return;
       if (e.key === 'Escape') setLightboxOpen(false);
       if (e.key === 'ArrowLeft') prev();

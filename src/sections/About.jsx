@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Brain, LineChart, Server, Sparkles, FileText, Download, Users, Globe2, Award } from 'lucide-react';
-// Profile photo path from src/assets/images
+import { Brain, LineChart, Server, Sparkles, FileText, Download, Users, Globe2 } from 'lucide-react';
 import profilePhoto from '../assets/images/profile-photo.png';
 import { portfolioData } from '../data/portfolioData';
 
-const getAssetPath = (path: string) => {
+const getAssetPath = (path) => {
+  if (!path) return '';
   if (path.startsWith('http')) return path;
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   return `${base}${cleanPath}`;
 };
 
-const About: React.FC = () => {
+const About = () => {
   const { personal, techStack } = portfolioData;
 
   const revealVariants = {
@@ -20,11 +20,11 @@ const About: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     },
   };
 
-  const getFocusIcon = (index: number) => {
+  const getFocusIcon = (index) => {
     switch (index) {
       case 0:
         return <Brain className="w-5 h-5 text-moonstone" />;
@@ -144,7 +144,7 @@ const About: React.FC = () => {
         ))}
       </motion.div>
 
-      {/* Core Specialization Pillars (Without Agentic AI jargon) */}
+      {/* Core Specialization Pillars */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -296,7 +296,7 @@ const About: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Soft Skills & Spoken Languages (Explicitly requested by user) */}
+      {/* Soft Skills & Spoken Languages */}
       <motion.div
         initial="hidden"
         whileInView="visible"

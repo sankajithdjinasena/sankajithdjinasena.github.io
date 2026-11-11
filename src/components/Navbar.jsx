@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Linkedin, Instagram, Github, Mail, Menu, X } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const { socials } = portfolioData;
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string, _href: string) => {
+  const handleNavClick = (e, id, _href) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
