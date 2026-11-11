@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Brain, LineChart, Server, Sparkles, FileText, Download, Users, Globe2 } from 'lucide-react';
 import profilePhoto from '../assets/images/profile-photo.png';
 import { portfolioData } from '../data/portfolioData';
+import TechIcon from '../components/TechIcon';
 
 const getAssetPath = (path) => {
   if (!path) return '';
@@ -285,9 +286,10 @@ const About = () => {
                       stiffness: 300,
                       damping: 20
                     }}
-                    className="px-3.5 py-1.5 rounded-lg bg-moonstone-dim border border-moonstone-border/20 text-moonstone text-xs sm:text-sm font-medium cursor-default relative transition-colors duration-300"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-moonstone-dim border border-moonstone-border/20 text-moonstone text-xs sm:text-sm font-medium cursor-default relative transition-all duration-300 group/pill hover:border-moonstone/50 hover:text-white"
                   >
-                    {item}
+                    <TechIcon name={item} className="w-3.5 h-3.5 shrink-0 opacity-80 group-hover/pill:opacity-100 transition-opacity" />
+                    <span>{item}</span>
                   </motion.span>
                 ))}
               </div>
