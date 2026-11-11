@@ -141,6 +141,18 @@ a {
   margin-bottom: 3rem;
 }
 
+.section-tagline {
+  display: block;
+  text-align: center;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-coral);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
 .heading span {
   color: var(--accent-cyan);
   position: relative;
@@ -154,6 +166,54 @@ a {
   background: linear-gradient(90deg, var(--accent-cyan), var(--accent-coral));
   box-shadow: 0 0 12px var(--accent-cyan);
   border-radius: 2px;
+}
+
+/* Card Banner Placeholder for Imageless Cards */
+.card-banner-placeholder {
+  width: 100%;
+  height: 210px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(0, 243, 255, 0.08), rgba(255, 84, 112, 0.08));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.card-banner-placeholder i {
+  font-size: 2.5rem;
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.4));
+  transition: var(--transition);
+}
+
+.card-banner-placeholder span {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-box:hover .card-banner-placeholder,
+.volunteering-box:hover .card-banner-placeholder {
+  border-color: var(--accent-cyan);
+  background: linear-gradient(135deg, rgba(0, 243, 255, 0.14), rgba(255, 84, 112, 0.14));
+}
+
+.portfolio-box:hover .card-banner-placeholder i,
+.volunteering-box:hover .card-banner-placeholder i {
+  transform: scale(1.1);
+  color: var(--accent-coral);
 }
 
 /* ===========================
@@ -702,6 +762,8 @@ a {
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .experience-box:hover,
@@ -744,6 +806,16 @@ a {
   color: var(--accent-yellow);
   margin-right: 0.4rem;
   font-size: 1.1rem;
+}
+
+.education-box h3 {
+  min-height: 2.8rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.education-box h2 {
+  min-height: 2.8rem;
 }
 
 .experience-box h2,
@@ -929,12 +1001,15 @@ a {
 .portfolio-container,
 .achievement-container,
 .volunteering-container,
-.recommendation-container {
+.recommendation-container,
+.education-container,
+.experience-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 1.6rem;
   max-width: 1200px;
   margin: 0 auto 1.5rem;
+  align-items: stretch;
 }
 
 /* Filter Navigation Tabs */
@@ -996,9 +1071,12 @@ a {
 }
 
 .portfolio-box h3 {
-  font-size: 1.2rem;
+  font-size: 1.12rem;
   color: var(--text-primary);
   line-height: 1.35;
+  min-height: 4.8rem;
+  display: flex;
+  align-items: flex-start;
 }
 
 .portfolio-box h4 {
@@ -1008,6 +1086,8 @@ a {
   color: var(--accent-yellow);
   letter-spacing: 0.04em;
   line-height: 1.4;
+  min-height: 1.4rem;
+  margin-bottom: 0.6rem;
 }
 
 .portfolio-box p {
@@ -1015,6 +1095,7 @@ a {
   line-height: 1.78;
   flex: 1;
   color: var(--text-secondary);
+  margin-bottom: 0.8rem;
 }
 
 /* Styled Tech Badge Pills */
@@ -1022,7 +1103,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin: 0.6rem 0;
+  margin-top: auto;
+  margin-bottom: 0.8rem;
 }
 
 .tech-pill {
@@ -1304,12 +1386,13 @@ a {
 .volunteering-box {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .achievement-box h3,
 .volunteering-box h3 {
   font-family: var(--font-display);
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-primary);
   display: flex;
@@ -1317,6 +1400,7 @@ a {
   gap: 0.5rem;
   margin-bottom: 0.8rem;
   line-height: 1.35;
+  min-height: 3.8rem;
 }
 
 .achievement-box h3 i,
@@ -1324,37 +1408,46 @@ a {
   color: var(--accent-yellow);
   font-size: 1rem;
   flex-shrink: 0;
+  margin-top: 0.15rem;
 }
 
 .achievement-box p,
 .volunteering-box p {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  flex: 1;
 }
 
 .achievement-slider,
-.volunteering-slider {
-  margin-top: 1rem;
+.volunteering-slider,
+.portfolio-box [data-slider] {
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   width: 100%;
+  height: 210px;
   box-sizing: border-box;
   flex-shrink: 0;
   position: relative;
+  background: rgba(14, 10, 26, 0.8);
 }
 
 .slider-track {
   display: flex;
-  transition: transform 0.4s ease;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .slider-track img {
   min-width: 100%;
   width: 100%;
-  height: 200px;
+  height: 210px;
   object-fit: cover;
   display: block;
+  background: rgba(14, 10, 26, 0.8);
 }
 
 .slider-btn {

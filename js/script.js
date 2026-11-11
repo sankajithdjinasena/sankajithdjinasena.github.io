@@ -570,22 +570,33 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') updateLightbox(lightboxIndex + 1);
 });
 
-// Sliders (single loop — handles both slider + lightbox)
+// Sliders (single loop — handles slider, auto-slide animation & lightbox)
 document.querySelectorAll('[data-slider]').forEach(slider => {
   const track = slider.querySelector('.slider-track');
+  if (!track) return;
   const imgs = [...track.querySelectorAll('img')];
+  if (imgs.length === 0) return;
+
   const dotsContainer = slider.querySelector('.slider-dots');
   let current = 0;
+  let autoTimer = null;
 
-  imgs.forEach((_, i) => {
-    const dot = document.createElement('div');
-    dot.classList.add('slider-dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  });
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    imgs.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('slider-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        goTo(i);
+        restartAutoSlide();
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
 
-  const dots = dotsContainer.querySelectorAll('.slider-dot');
+  const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
 
   // Slide Counter Badge
   let counterBadge = slider.querySelector('.slider-counter');
@@ -598,23 +609,65 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
   function goTo(index) {
     current = (index + imgs.length) % imgs.length;
     track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach(d => d.classList.remove('active'));
-    dots[current].classList.add('active');
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
     if (counterBadge) counterBadge.textContent = `${current + 1} / ${imgs.length}`;
   }
 
-  // Initial counter set
   if (counterBadge && imgs.length > 1) {
     counterBadge.textContent = `1 / ${imgs.length}`;
   }
 
-  slider.querySelector('.prev').addEventListener('click', () => goTo(current - 1));
-  slider.querySelector('.next').addEventListener('click', () => goTo(current + 1));
+  const prevBtn = slider.querySelector('.prev');
+  const nextBtn = slider.querySelector('.next');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goTo(current - 1);
+      restartAutoSlide();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goTo(current + 1);
+      restartAutoSlide();
+    });
+  }
 
   imgs.forEach((img, i) => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => openLightbox(imgs, i));
   });
+
+  // Auto Image Animation Logic (cycles every 3.5 seconds)
+  function startAutoSlide() {
+    if (imgs.length <= 1) return;
+    stopAutoSlide();
+    autoTimer = setInterval(() => {
+      goTo(current + 1);
+    }, 3500);
+  }
+
+  function stopAutoSlide() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  function restartAutoSlide() {
+    stopAutoSlide();
+    startAutoSlide();
+  }
+
+  // Pause on hover, resume on mouse leave
+  slider.addEventListener('mouseenter', stopAutoSlide);
+  slider.addEventListener('mouseleave', startAutoSlide);
+
+  // Start auto-animation
+  startAutoSlide();
 });
 
 // ===========================
