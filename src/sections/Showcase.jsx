@@ -15,6 +15,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import TechIcon from '../components/TechIcon';
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -212,6 +213,7 @@ const Showcase = () => {
             <button
               onClick={prevProject}
               aria-label="Previous project"
+              title="Previous project"
               className="w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:bg-moonstone hover:text-zinc-950 text-white flex items-center justify-center transition-all duration-300 shadow-md active:scale-95"
             >
               <ChevronLeft size={18} />
@@ -219,6 +221,7 @@ const Showcase = () => {
             <button
               onClick={nextProject}
               aria-label="Next project"
+              title="Next project"
               className="w-10 h-10 rounded-full border border-white/10 bg-white/5 hover:bg-moonstone hover:text-zinc-950 text-white flex items-center justify-center transition-all duration-300 shadow-md active:scale-95"
             >
               <ChevronRight size={18} />
@@ -294,9 +297,11 @@ const Showcase = () => {
                     {currentProject.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[11px] font-mono tracking-wider text-white/80 border border-white/10 bg-white/5 px-3 py-1 rounded-lg uppercase"
+                        title={tech}
+                        className="inline-flex items-center gap-1.5 text-[11px] font-mono tracking-wider text-white/80 border border-white/10 bg-white/5 px-2.5 py-1 rounded-lg uppercase hover:border-moonstone/40 hover:text-white transition-all cursor-default"
                       >
-                        {tech}
+                        <TechIcon name={tech} className="w-3.5 h-3.5 text-moonstone" />
+                        <span>{tech}</span>
                       </span>
                     ))}
                   </div>

@@ -275,6 +275,7 @@ const About = () => {
                 {stack.items.map((item) => (
                   <motion.span
                     key={item}
+                    title={item}
                     whileHover={{
                       scale: 1.05,
                       zIndex: 20,

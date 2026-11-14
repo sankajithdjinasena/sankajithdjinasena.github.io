@@ -338,6 +338,7 @@ const Contact = () => {
                 href={socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                title="LinkedIn"
                 className="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-moonstone/50 hover:bg-moonstone/10 text-white hover:text-moonstone transition-all text-xs font-mono"
               >
                 <Linkedin size={16} className="text-moonstone" />
@@ -349,6 +350,7 @@ const Contact = () => {
                   href={socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="GitHub"
                   className="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-moonstone/50 hover:bg-moonstone/10 text-white hover:text-moonstone transition-all text-xs font-mono"
                 >
                   <Github size={16} className="text-moonstone" />
@@ -361,6 +363,7 @@ const Contact = () => {
                   href={socials.medium}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="Medium"
                   className="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-moonstone/50 hover:bg-moonstone/10 text-white hover:text-moonstone transition-all text-xs font-mono"
                 >
                   <span className="text-moonstone font-bold text-sm">M</span>
@@ -373,6 +376,7 @@ const Contact = () => {
                   href={socials.portfolioUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title="Portfolio"
                   className="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-moonstone/50 hover:bg-moonstone/10 text-white hover:text-moonstone transition-all text-xs font-mono"
                 >
                   <span className="text-moonstone font-bold text-sm">🌐</span>

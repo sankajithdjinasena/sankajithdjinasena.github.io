@@ -32,10 +32,10 @@ const Navbar = () => {
   };
 
   const socialLinks = [
-    { icon: <Linkedin size={20} />, href: socials.linkedin },
-    ...(socials.instagram ? [{ icon: <Instagram size={20} />, href: socials.instagram }] : []),
-    { icon: <Github size={20} />, href: socials.github },
-    { icon: <Mail size={20} />, href: `mailto:${socials.email}` },
+    { name: 'LinkedIn', icon: <Linkedin size={20} />, href: socials.linkedin },
+    ...(socials.instagram ? [{ name: 'Instagram', icon: <Instagram size={20} />, href: socials.instagram }] : []),
+    { name: 'GitHub', icon: <Github size={20} />, href: socials.github },
+    { name: 'Email', icon: <Mail size={20} />, href: `mailto:${socials.email}` },
   ];
 
   useEffect(() => {
@@ -126,6 +126,8 @@ const Navbar = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title={social.name}
+                  aria-label={social.name}
                   className="hover:text-white transition-colors min-h-11 min-w-11 flex items-center justify-center"
                 >
                   {social.icon}

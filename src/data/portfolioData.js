@@ -460,7 +460,7 @@ export const portfolioData = {
       period: "July 2026 - Sep 2026",
       description: "Conducted a comparative NLP study across stylometrics, TF-IDF, and deep learning, fine-tuning a DistilBERT transformer that achieved 98.05% accuracy and a 0.981 F1-score in detecting AI-generated Amazon reviews.",
       stack: ["Python", "NLP", "TF-IDF", "DistilBERT", "React", "FastAPI", "Scikit-learn"],
-      image: "/images/NLP.png",
+      image: "/images/Projects/defaults/Detecting AI generated reviews.jpg",
       github: "https://github.com/sankajithdjinasena/Review-Real-Fake-Classifier",
       live: null,
       keyHighlights: [
@@ -476,7 +476,7 @@ export const portfolioData = {
       period: "Oct 2026",
       description: "Engineered a predictive churn pipeline using SMOTE and Focal Loss XGBoost to handle severe class imbalance, achieving 80.21% Recall and 0.8468 ROC-AUC across 7,043 customer accounts.",
       stack: ["Python", "XGBoost", "Scikit-learn", "SMOTE", "AWS (S3, Lambda, Glue, Athena, CloudWatch)", "FastAPI", "React"],
-      image: "/images/datastrom-lakehouse-archi.svg",
+      image: "/images/Projects/defaults/Telecom Customer Churn Analytics & Predictive Retention System.jpg",
       github: "https://github.com/sankajithdjinasena/AWS_Project_Team_07",
       live: null,
       keyHighlights: [
@@ -515,7 +515,7 @@ export const portfolioData = {
       period: "Jun 2026",
       description: "Executed the 6-stage CRISP-DM methodology on 1,470 employee records, engineering custom career-stage features and scaling features to address class imbalance.",
       stack: ["Python", "Pandas", "Scikit-learn", "CRISP-DM", "Classification (Logistic Regression, Random Forest, SVM)"],
-      image: "/images/Projects/defaults/employee-attrition.svg",
+      image: "/images/Projects/defaults/Employee Attrition Prediction using CRISP-DM.jpg",
       github: "https://github.com/sankajithdjinasena/EmployeeAttritionPrediction",
       live: null,
       keyHighlights: [
@@ -531,7 +531,7 @@ export const portfolioData = {
       period: "Sep 2025 - Nov 2025",
       description: "Engineered a 3-tier, role-based clinical monitoring platform supporting Patients, Doctors, and Admins across a normalized 10-table MySQL relational schema with Chart.js vitals tracking and automated PDF health reporting.",
       stack: ["Python", "Flask", "Scikit-learn", "PHP", "MySQL", "Chart.js", "Dialogflow", "JavaScript"],
-      image: "/images/Emotion-Detection.png",
+      image: "/images/Projects/defaults/Welltracker.jpg",
       github: "https://github.com/sankajithdjinasena/WelltackerR",
       live: null,
       keyHighlights: [
@@ -547,7 +547,7 @@ export const portfolioData = {
       period: "Sep 2025 - Nov 2025",
       description: "Modeled 39 years of daily historical stock returns (1986-2025) using parametric distributions (Normal, Log-Normal, Student’s t), fitting heavy-tailed characteristics and evaluating empirical win-loss probabilities.",
       stack: ["Python (Pandas, NumPy, Matplotlib, Seaborn)", "SciPy", "Statsmodels", "Monte Carlo Simulation", "Markov Chains"],
-      image: "/images/Projects/defaults/stock-probability.svg",
+      image: "/images/Projects/defaults/Microsoft Stock Probability Analysis.jpg",
       github: "https://github.com/sankajithdjinasena/MicrosoftStockAnalyzeUsingProbability",
       live: null,
       keyHighlights: [
@@ -584,7 +584,7 @@ export const portfolioData = {
       period: "Aug 2026",
       description: "A trilingual (English, Sinhala, Tamil) AI farm advisory application with a FAISS-indexed knowledge base and Groq LLM agents providing real-time crop advisory, weather forecasts, fertilizer recommendations, and market-price analysis.",
       stack: ["Python", "FastAPI", "Groq LLM", "FAISS", "Sentence Transformers", "HTML/CSS/JS"],
-      image: "/images/Projects/defaults/agriagent.svg",
+      image: "/images/Projects/defaults/agri agent.jpg",
       github: "https://github.com/sankajithdjinasena",
       live: null,
       keyHighlights: [
@@ -601,7 +601,7 @@ export const portfolioData = {
       period: "Jul 2026",
       description: "A centralized university resource-booking platform with role-based access for students, faculty, and administrators. Uses priority-based scheduling for conflict-free allocation and dynamic waitlist routing for over-capacity requests.",
       stack: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
-      image: "/images/NexLab.jpg",
+      image: "/images/Projects/defaults/nexlab.jpg",
       github: "https://github.com/sankajithdjinasena/NEXLAB",
       live: null,
       keyHighlights: [
@@ -618,7 +618,7 @@ export const portfolioData = {
       period: "Jan 2026 - Feb 2026",
       description: "A Python-based desktop application that enables users to efficiently explore, clean, visualize, and analyze CSV datasets through an intuitive graphical interface. Provides real-time data previews, automated data cleaning, interactive plots, and comprehensive statistical insights.",
       stack: ["Python", "Scikit-learn", "Tkinter", "Flask", "Pandas", "Matplotlib"],
-      image: "/images/Projects/defaults/csv-analyzer.svg",
+      image: "/images/Projects/defaults/Csv.jpg",
       github: "https://github.com/sankajithdjinasena/PythonMiniProjects/tree/main/CSV_Analyzer",
       live: null,
       keyHighlights: [
@@ -635,7 +635,7 @@ export const portfolioData = {
       period: "Jan 2026 - Feb 2026",
       description: "A real-time AI-powered surveillance system that detects animals entering a home environment, classifies them as safe or dangerous, and sends instant email alerts for potential threats using YOLO object detection and OpenCV.",
       stack: ["Python", "YOLO", "OpenCV", "Scikit-learn", "Flask"],
-      image: "/images/bee-gesture.png",
+      image: "/images/Projects/defaults/smart animal.jpg",
       github: "https://github.com/sankajithdjinasena/SmartAnimalWatcher",
       live: null,
       keyHighlights: [
@@ -652,7 +652,7 @@ export const portfolioData = {
       period: "Feb 2025 - Jun 2025",
       description: "RideSync is a web prototype modernizing public transport administration by integrating route scheduling, digital ticket booking, fleet management, and passenger feedback into a centralized platform.",
       stack: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
-      image: "/images/Projects/defaults/ridesync.svg",
+      image: "/images/Projects/defaults/bus management.jpg",
       github: "https://github.com/sankajithdjinasena/BusManagementSystem",
       live: null,
       keyHighlights: [
@@ -669,7 +669,7 @@ export const portfolioData = {
       period: "Sep 2024 - Oct 2024",
       description: "Explored mobile device usage patterns to classify user behavior using real-world Kaggle datasets. Executed the full data science pipeline from data cleaning/EDA to training predictive ML classifiers.",
       stack: ["Python", "Scikit-learn", "Flask", "PHP", "MySQL"],
-      image: "/images/Projects/defaults/user-behavior.svg",
+      image: "/images/Projects/defaults/mobile usage.jpg",
       github: "https://github.com/sankajithdjinasena/UserBehaviorClassPredictor",
       live: null,
       keyHighlights: [
@@ -686,7 +686,7 @@ export const portfolioData = {
       period: "Jan 2025 - Mar 2025",
       description: "Machine learning-based environmental prediction system forecasting water quality levels from historical data. Integrates regression and classification models into an interactive web application.",
       stack: ["Python", "Scikit-learn", "Flask", "PHP", "MySQL"],
-      image: "/images/Projects/defaults/hydroscan.svg",
+      image: "/images/Projects/defaults/hydroscan.jpg",
       github: "https://github.com/sankajithdjinasena/WaterQualityPredictor",
       live: null,
       keyHighlights: [
