@@ -225,7 +225,7 @@ const About = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-1.5 flex-wrap">
                     <h4 className="text-xl font-bold text-white group-hover:text-moonstone transition-colors font-poppins">
-                      {personal.name} — Curriculum Vitae
+                      {personal.name} - Curriculum Vitae
                     </h4>
                     <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-moonstone">
                       Data Science Undergraduate

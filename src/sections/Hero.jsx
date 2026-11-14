@@ -43,7 +43,7 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="text-center z-10 w-full max-w-4xl min-w-0 px-2 lg:px-0"
+        className="text-center z-10 w-full max-w-5xl min-w-0 px-4 sm:px-6 lg:px-8"
       >
         {/* Availability Status Badge */}
         {personal.availability.status && (
@@ -67,7 +67,7 @@ const Hero = () => {
         {/* Main Name */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-3 sm:mb-4 font-bold tracking-tight text-white leading-tight font-poppins"
+          className="text-[clamp(1.65rem,5.2vw,5rem)] mb-3 sm:mb-4 font-bold tracking-tight text-white leading-tight font-poppins whitespace-nowrap"
         >
           {personal.name}
         </motion.h1>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0e1726"/>
+      <stop offset="100%" stop-color="#050810"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bg)"/>
+
+  <!-- Browser Header -->
+  <rect x="40" y="30" width="1120" height="45" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <circle cx="70" cy="52" r="6" fill="#ef4444"/>
+  <circle cx="92" cy="52" r="6" fill="#f59e0b"/>
+  <circle cx="114" cy="52" r="6" fill="#10b981"/>
+  <rect x="150" y="42" width="450" height="22" rx="6" fill="#1e293b"/>
+  <text x="170" y="57" font-family="monospace" font-size="11" fill="#94a3b8">github://sankajithdjinasena/production-deployment</text>
+  <rect x="1000" y="42" width="140" height="22" rx="11" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-width="1"/>
+  <text x="1015" y="57" font-family="monospace" font-size="10" fill="#38bdf8">● PRODUCTION READY</text>
+
+  <!-- Title -->
+  <text x="50" y="125" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">Engineering Architecture &amp; System Preview</text>
+  <text x="50" y="152" font-family="monospace" font-size="13" fill="#64748b">END-TO-END PIPELINE · REST MICROSERVICES · CLOUD DISTRIBUTED ARCHITECTURE</text>
+
+  <!-- Left: Code & Pipeline Terminal -->
+  <rect x="50" y="180" width="670" height="520" rx="16" fill="url(#cardBg)" stroke="#334155" stroke-width="1.5"/>
+  <text x="80" y="220" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0">Production Inference Terminal</text>
+  <text x="80" y="240" font-family="monospace" font-size="11" fill="#64748b">Async Microservice Gateway &amp; Telemetry</text>
+
+  <g transform="translate(80, 260)">
+    <rect width="610" height="400" fill="#030712" rx="10" stroke="#1e293b"/>
+    <text x="30" y="45" font-family="monospace" font-size="13" fill="#38bdf8">$ uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4</text>
+    <text x="30" y="80" font-family="monospace" font-size="12" fill="#10b981">INFO:     Started server process [pid: 41829]</text>
+    <text x="30" y="105" font-family="monospace" font-size="12" fill="#10b981">INFO:     Waiting for application startup.</text>
+    <text x="30" y="130" font-family="monospace" font-size="12" fill="#818cf8">INFO:     Loading neural weights &amp; feature transformers...</text>
+    <text x="30" y="155" font-family="monospace" font-size="12" fill="#10b981">INFO:     ChromaDB vector store indexed [12,480 nodes]</text>
+    <text x="30" y="180" font-family="monospace" font-size="12" fill="#38bdf8">INFO:     Application startup complete.</text>
+    
+    <text x="30" y="225" font-family="monospace" font-size="12" fill="#f8fafc">POST /api/v1/infer - 200 OK (latency: 18.4ms)</text>
+    <text x="30" y="250" font-family="monospace" font-size="12" fill="#94a3b8">{</text>
+    <text x="50" y="275" font-family="monospace" font-size="12" fill="#f59e0b">  "status": "success",</text>
+    <text x="50" y="300" font-family="monospace" font-size="12" fill="#f59e0b">  "prediction": "Verified",</text>
+    <text x="50" y="325" font-family="monospace" font-size="12" fill="#f59e0b">  "confidence": 0.982,</text>
+    <text x="50" y="350" font-family="monospace" font-size="12" fill="#f59e0b">  "validation": "Pydantic Schema Compliant"</text>
+    <text x="30" y="375" font-family="monospace" font-size="12" fill="#94a3b8">}</text>
+  </g>
+
+  <!-- Right: Architecture Nodes -->
+  <rect x="740" y="180" width="410" height="520" rx="16" fill="url(#cardBg)" stroke="#334155" stroke-width="1.5"/>
+  <text x="770" y="220" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0">Telemetry &amp; Microservices</text>
+  <text x="770" y="240" font-family="monospace" font-size="11" fill="#64748b">Self-Healing Distributed Service Mesh</text>
+
+  <!-- Node Visuals -->
+  <g transform="translate(770, 275)">
+    <!-- Node 1 -->
+    <rect x="0" y="0" width="350" height="75" rx="10" fill="#030712" stroke="#10b981"/>
+    <text x="20" y="32" font-family="monospace" font-size="12" font-weight="bold" fill="#34d399">API Gateway &amp; Ingestion</text>
+    <text x="20" y="55" font-family="monospace" font-size="10" fill="#94a3b8">FastAPI + Async Worker Threads</text>
+    <circle cx="320" cy="37" r="6" fill="#10b981"/>
+
+    <!-- Arrow -->
+    <line x1="175" y1="75" x2="175" y2="105" stroke="#334155" stroke-width="2"/>
+
+    <!-- Node 2 -->
+    <rect x="0" y="105" width="350" height="75" rx="10" fill="#030712" stroke="#38bdf8"/>
+    <text x="20" y="137" font-family="monospace" font-size="12" font-weight="bold" fill="#38bdf8">Vector Store &amp; Semantic Cache</text>
+    <text x="20" y="160" font-family="monospace" font-size="10" fill="#94a3b8">ChromaDB / FAISS + Llama-3.3</text>
+    <circle cx="320" cy="142" r="6" fill="#38bdf8"/>
+
+    <!-- Arrow -->
+    <line x1="175" y1="180" x2="175" y2="210" stroke="#334155" stroke-width="2"/>
+
+    <!-- Node 3 -->
+    <rect x="0" y="210" width="350" height="75" rx="10" fill="#030712" stroke="#818cf8"/>
+    <text x="20" y="242" font-family="monospace" font-size="12" font-weight="bold" fill="#818cf8">Inference &amp; Self-Healing Loop</text>
+    <text x="20" y="265" font-family="monospace" font-size="10" fill="#94a3b8">Pydantic Auto-Correction &amp; Fallbacks</text>
+    <circle cx="320" cy="247" r="6" fill="#818cf8"/>
+
+    <!-- Arrow -->
+    <line x1="175" y1="285" x2="175" y2="315" stroke="#334155" stroke-width="2"/>
+
+    <!-- Node 4 -->
+    <rect x="0" y="315" width="350" height="75" rx="10" fill="#030712" stroke="#c084fc"/>
+    <text x="20" y="347" font-family="monospace" font-size="12" font-weight="bold" fill="#c084fc">Interactive Client Interface</text>
+    <text x="20" y="370" font-family="monospace" font-size="10" fill="#94a3b8">React + Tailwind CSS + Framer Motion</text>
+    <circle cx="320" cy="352" r="6" fill="#c084fc"/>
+  </g>
+</svg>

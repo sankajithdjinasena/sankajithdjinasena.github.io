@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04121d"/>
+      <stop offset="50%" stop-color="#081e2e"/>
+      <stop offset="100%" stop-color="#020910"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d283d" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#061826" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="waterFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#bg)"/>
+
+  <!-- Browser Header -->
+  <rect x="40" y="30" width="1120" height="45" rx="10" fill="#061b2b" stroke="#123a59" stroke-width="1.5"/>
+  <circle cx="70" cy="52" r="6" fill="#ef4444"/>
+  <circle cx="92" cy="52" r="6" fill="#f59e0b"/>
+  <circle cx="114" cy="52" r="6" fill="#10b981"/>
+  <rect x="150" y="42" width="450" height="22" rx="6" fill="#0f2b42"/>
+  <text x="170" y="57" font-family="monospace" font-size="11" fill="#7dd3fc">hydroscan://water-quality.telemetry/potability-pipeline</text>
+  <rect x="1000" y="42" width="140" height="22" rx="11" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-width="1"/>
+  <text x="1015" y="57" font-family="monospace" font-size="10" fill="#38bdf8">● SAFE FOR CONSUMPTION</text>
+
+  <!-- Title -->
+  <text x="50" y="125" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">Hydroscan - Water Quality Prediction Platform</text>
+  <text x="50" y="152" font-family="monospace" font-size="13" fill="#38bdf8">PREDICTIVE POTABILITY REGRESSION · SENSOR TELEMETRY · ENSEMBLE ML CLASSIFICATION</text>
+
+  <!-- Left: Sensor Gauges & Water Quality Score -->
+  <rect x="50" y="180" width="670" height="520" rx="16" fill="url(#cardBg)" stroke="#164e75" stroke-width="1.5"/>
+  <text x="80" y="220" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0">Real-Time Chemical Parameter Sensor Matrix</text>
+  <text x="80" y="240" font-family="monospace" font-size="11" fill="#7dd3fc">WHO Water Potability Standards Comparison</text>
+
+  <!-- Water Wave Illustration -->
+  <g transform="translate(80, 260)">
+    <rect width="610" height="270" fill="#021422" rx="10" stroke="#0e3a59"/>
+    
+    <!-- Waves -->
+    <path d="M 0 160 Q 150 120 300 160 T 610 160 L 610 270 L 0 270 Z" fill="#0369a1" fill-opacity="0.4"/>
+    <path d="M 0 180 Q 150 150 300 180 T 610 180 L 610 270 L 0 270 Z" fill="#0284c7" fill-opacity="0.6"/>
+    <path d="M 0 200 Q 150 180 300 200 T 610 200 L 610 270 L 0 270 Z" fill="#0ea5e9" fill-opacity="0.8"/>
+
+    <!-- Gauges Grid inside Wave Card -->
+    <!-- pH Gauge -->
+    <g transform="translate(40, 30)">
+      <rect width="115" height="100" rx="8" fill="#041b2c" stroke="#0e3a59"/>
+      <text x="15" y="25" font-family="monospace" font-size="11" fill="#7dd3fc">pH LEVEL</text>
+      <text x="15" y="62" font-family="monospace" font-size="28" font-weight="700" fill="#34d399">7.24</text>
+      <text x="15" y="85" font-family="monospace" font-size="10" fill="#10b981">Optimal (6.5-8.5)</text>
+    </g>
+
+    <!-- Turbidity -->
+    <g transform="translate(180, 30)">
+      <rect width="115" height="100" rx="8" fill="#041b2c" stroke="#0e3a59"/>
+      <text x="15" y="25" font-family="monospace" font-size="11" fill="#7dd3fc">TURBIDITY</text>
+      <text x="15" y="62" font-family="monospace" font-size="28" font-weight="700" fill="#38bdf8">2.8 NTU</text>
+      <text x="15" y="85" font-family="monospace" font-size="10" fill="#38bdf8">Low (Clear)</text>
+    </g>
+
+    <!-- Hardness -->
+    <g transform="translate(320, 30)">
+      <rect width="115" height="100" rx="8" fill="#041b2c" stroke="#0e3a59"/>
+      <text x="15" y="25" font-family="monospace" font-size="11" fill="#7dd3fc">HARDNESS</text>
+      <text x="15" y="62" font-family="monospace" font-size="28" font-weight="700" fill="#f59e0b">182 mg/L</text>
+      <text x="15" y="85" font-family="monospace" font-size="10" fill="#f59e0b">Moderate</text>
+    </g>
+
+    <!-- Chloramines -->
+    <g transform="translate(460, 30)">
+      <rect width="115" height="100" rx="8" fill="#041b2c" stroke="#0e3a59"/>
+      <text x="15" y="25" font-family="monospace" font-size="11" fill="#7dd3fc">CHLORAMINE</text>
+      <text x="15" y="62" font-family="monospace" font-size="28" font-weight="700" fill="#34d399">6.4 ppm</text>
+      <text x="15" y="85" font-family="monospace" font-size="10" fill="#10b981">Safe</text>
+    </g>
+  </g>
+
+  <!-- Metrics -->
+  <g transform="translate(80, 560)">
+    <rect x="0" y="0" width="190" height="110" rx="10" fill="#021422" stroke="#0e3a59"/>
+    <text x="18" y="30" font-family="monospace" font-size="11" fill="#7dd3fc">POTABILITY INDEX</text>
+    <text x="18" y="70" font-family="monospace" font-size="28" font-weight="700" fill="#34d399">91.4%</text>
+    <text x="18" y="92" font-family="monospace" font-size="10" fill="#10b981">Safe for Drinking</text>
+
+    <rect x="210" y="0" width="190" height="110" rx="10" fill="#021422" stroke="#0e3a59"/>
+    <text x="228" y="30" font-family="monospace" font-size="11" fill="#7dd3fc">SOLIDS (TDS)</text>
+    <text x="228" y="70" font-family="monospace" font-size="28" font-weight="700" fill="#38bdf8">14,210</text>
+    <text x="228" y="92" font-family="monospace" font-size="10" fill="#94a3b8">ppm Mineral Salts</text>
+
+    <rect x="420" y="0" width="190" height="110" rx="10" fill="#021422" stroke="#0e3a59"/>
+    <text x="438" y="30" font-family="monospace" font-size="11" fill="#7dd3fc">SULFATE</text>
+    <text x="438" y="70" font-family="monospace" font-size="28" font-weight="700" fill="#38bdf8">312 mg/L</text>
+    <text x="438" y="92" font-family="monospace" font-size="10" fill="#38bdf8">Within Standards</text>
+  </g>
+
+  <!-- Right: ML Potability Engine -->
+  <rect x="740" y="180" width="410" height="520" rx="16" fill="url(#cardBg)" stroke="#164e75" stroke-width="1.5"/>
+  <text x="770" y="220" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0">Model Classification Confidence</text>
+  <text x="770" y="240" font-family="monospace" font-size="11" fill="#7dd3fc">Random Forest &amp; Gradient Boost Ensemble</text>
+
+  <!-- Potability Gauge Circle -->
+  <g transform="translate(945, 360)">
+    <circle cx="0" cy="0" r="85" fill="none" stroke="#082f49" stroke-width="16"/>
+    <circle cx="0" cy="0" r="85" fill="none" stroke="url(#waterFlow)" stroke-width="16" stroke-dasharray="534" stroke-dashoffset="60" stroke-linecap="round"/>
+    <text x="0" y="5" font-family="monospace" font-size="34" font-weight="bold" fill="#38bdf8" text-anchor="middle">91.4%</text>
+    <text x="0" y="30" font-family="monospace" font-size="11" fill="#34d399" text-anchor="middle">POTABLE</text>
+  </g>
+
+  <!-- Ensemble Features -->
+  <g transform="translate(770, 485)">
+    <rect width="350" height="185" rx="10" fill="#021422" stroke="#0e3a59"/>
+    <text x="20" y="28" font-family="system-ui" font-size="12" font-weight="600" fill="#e2e8f0">Model Validation Highlights</text>
+    <text x="20" y="55" font-family="monospace" font-size="11" fill="#7dd3fc">● 3,276 Environmental Samples Tested</text>
+    <text x="20" y="80" font-family="monospace" font-size="11" fill="#7dd3fc">● 87.2% Multi-Class ROC-AUC Score</text>
+    <text x="20" y="105" font-family="monospace" font-size="11" fill="#7dd3fc">● Trihalomethanes &amp; Organic Carbon Tracked</text>
+    <text x="20" y="130" font-family="monospace" font-size="11" fill="#7dd3fc">● Fast Field-Technician Inference API</text>
+    <g transform="translate(20, 145)">
+      <rect x="0" y="0" width="70" height="24" rx="12" fill="#0c4a6e"/>
+      <text x="35" y="16" font-family="monospace" font-size="10" fill="#bae6fd" text-anchor="middle">SCIKIT</text>
+      <rect x="78" y="0" width="70" height="24" rx="12" fill="#0c4a6e"/>
+      <text x="113" y="16" font-family="monospace" font-size="10" fill="#bae6fd" text-anchor="middle">FLASK</text>
+      <rect x="156" y="0" width="70" height="24" rx="12" fill="#0c4a6e"/>
+      <text x="191" y="16" font-family="monospace" font-size="10" fill="#bae6fd" text-anchor="middle">PYTHON</text>
+    </g>
+  </g>
+</svg>

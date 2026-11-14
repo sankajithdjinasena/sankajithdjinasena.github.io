@@ -138,7 +138,7 @@ export const portfolioData = {
       id: "edu-al",
       degree: "GCE Advanced Level Examination (Physical Science Stream)",
       institution: "Dharmaraja College, Kandy",
-      period: "2021 - 2022 | Z-score: 1.3509",
+      period: "2020 - 2022 | Z-score: 1.3509",
       logo: "/images/dharmaraja.png",
       description: "Completed Advanced Level Examination in Physical Science stream including Combined Mathematics, Physics, and Chemistry."
     },
@@ -158,7 +158,7 @@ export const portfolioData = {
       id: "cert-datacamp-dsa",
       title: "Data Scientist Associate Certificate",
       issuer: "DataCamp",
-      year: "2024 - 2026",
+      year: "2026 - 2028",
       featured: true,
       description: "Industry-standard certification validating foundational data science skills in data management, exploratory data analysis, statistical experimentation, and predictive modeling.",
       link: "https://www.datacamp.com/certificate/DSA0012959110562"
@@ -302,21 +302,40 @@ export const portfolioData = {
       title: "J’PuraXtreme 3.0 - Finalist",
       team: "Team Predictra",
       description: "Qualified for the final round, demonstrating strong problem-solving, coding, logical thinking, and teamwork under time pressure.",
-      photos: []
+      photos: [
+        "/images/Achievements/JapuraXtream/Japura (1).jpg",
+        "/images/Achievements/JapuraXtream/Japura (2).jpg",
+        "/images/Achievements/JapuraXtream/Japura (3).jpg",
+        "/images/Achievements/JapuraXtream/Japura (4).jpg",
+        "/images/Achievements/JapuraXtream/Japura (5).jpg",
+        "/images/Achievements/JapuraXtream/Japura (6).jpg"
+      ]
     },
     {
       id: "ach-codearena",
       title: "CodeAréna’26 - Finalist",
       team: "Team Predictra",
       description: "Advanced to the Grand Finale following a 36-hour developing, debugging, and pitching a complete solution under tight time constraints at Dialog Axiata PLC Headquarters.",
-      photos: []
+      photos: [
+        "/images/Achievements/Codearena/Codearena (0).jpg",
+        "/images/Achievements/Codearena/Codearena (1).jpg",
+        "/images/Achievements/Codearena/Codearena (2).jpg",
+        "/images/Achievements/Codearena/Codearena (3).jpg",
+        "/images/Achievements/Codearena/Codearena (4).jpg",
+        "/images/Achievements/Codearena/Codearena (5).jpg"
+      ]
     },
     {
       id: "ach-coderally",
       title: "CodeRally 7.0 - Intermediate Tier Grand Finalist",
       team: "Team Predictra",
       description: "Qualified for the Intermediate Tier Grand Finale and a 24-hour hackathon challenge, demonstrating strong technical problem-solving, adaptability, and teamwork under pressure.",
-      photos: []
+      photos: [
+        "/images/Achievements/coderally/coderally (1).jpg",
+        "/images/Achievements/coderally/coderally (2).jpg",
+        "/images/Achievements/coderally/coderally (3).jpg",
+        "/images/Achievements/coderally/coderally (4).jpg"
+      ]
     }
   ],
 
@@ -369,14 +388,30 @@ export const portfolioData = {
       title: "Volunteer - Rotaract Club of SUSL",
       period: "2025 - Present",
       description: "Contributing mainly on the technical side, supporting the club ‘s IT needs and activities to empower campus initiatives and community service projects.",
-      photos: []
+      photos: [
+        "/images/Volunteering/Rotaract/btg (1).jpg",
+        "/images/Volunteering/Rotaract/btg (2).jpg",
+        "/images/Volunteering/Rotaract/btg (3).jpg",
+        "/images/Volunteering/Rotaract/btg (4).jpg",
+        "/images/Volunteering/Rotaract/btg (5).jpg",
+        "/images/Volunteering/Rotaract/btg (6).jpg",
+        "/images/Volunteering/Rotaract/btg (7).jpg"
+      ]
     },
     {
       id: "vol-ieee",
       title: "Volunteer - IEEE Student Branch, SUSL",
       period: "2026 - Present",
       description: "Support the technical coordination of IEEE activities and events, including IT-related tasks, digital platforms, and other technical requirements.",
-      photos: []
+      photos: [
+        "/images/Volunteering/IEEE/IEEE (6).jpg",
+        "/images/Volunteering/IEEE/IEEE (5).jpg",
+        "/images/Volunteering/IEEE/IEEE (4).jpg",
+        "/images/Volunteering/IEEE/IEEE (3).jpg",
+        "/images/Volunteering/IEEE/IEEE (2).jpg",
+        "/images/Volunteering/IEEE/IEEE (1).jpg",
+        "/images/Volunteering/IEEE/IEEE (7).jpeg",
+      ]
     }
   ],
 
@@ -408,7 +443,7 @@ export const portfolioData = {
       period: "Aug 2026",
       description: "Engineered a 5-agent autonomous coaching system using a compiled LangGraph state machine to deliver end-to-end skill-gap, interview, and job matching reports.",
       stack: ["Python", "FastAPI", "LangGraph", "LangChain", "Groq LPU (Llama 3.3)", "ChromaDB", "React", "Tailwind CSS", "Pydantic", "ReportLab"],
-      image: null,
+      image: "/images/Career-Compass-AI.png",
       github: "https://github.com/sankajithdjinasena/CareerCompass_AI",
       live: null,
       keyHighlights: [
@@ -425,7 +460,7 @@ export const portfolioData = {
       period: "July 2026 - Sep 2026",
       description: "Conducted a comparative NLP study across stylometrics, TF-IDF, and deep learning, fine-tuning a DistilBERT transformer that achieved 98.05% accuracy and a 0.981 F1-score in detecting AI-generated Amazon reviews.",
       stack: ["Python", "NLP", "TF-IDF", "DistilBERT", "React", "FastAPI", "Scikit-learn"],
-      image: null,
+      image: "/images/NLP.png",
       github: "https://github.com/sankajithdjinasena/Review-Real-Fake-Classifier",
       live: null,
       keyHighlights: [
@@ -441,7 +476,7 @@ export const portfolioData = {
       period: "Oct 2026",
       description: "Engineered a predictive churn pipeline using SMOTE and Focal Loss XGBoost to handle severe class imbalance, achieving 80.21% Recall and 0.8468 ROC-AUC across 7,043 customer accounts.",
       stack: ["Python", "XGBoost", "Scikit-learn", "SMOTE", "AWS (S3, Lambda, Glue, Athena, CloudWatch)", "FastAPI", "React"],
-      image: null,
+      image: "/images/datastrom-lakehouse-archi.svg",
       github: "https://github.com/sankajithdjinasena/AWS_Project_Team_07",
       live: null,
       keyHighlights: [
@@ -480,7 +515,7 @@ export const portfolioData = {
       period: "Jun 2026",
       description: "Executed the 6-stage CRISP-DM methodology on 1,470 employee records, engineering custom career-stage features and scaling features to address class imbalance.",
       stack: ["Python", "Pandas", "Scikit-learn", "CRISP-DM", "Classification (Logistic Regression, Random Forest, SVM)"],
-      image: null,
+      image: "/images/Projects/defaults/employee-attrition.svg",
       github: "https://github.com/sankajithdjinasena/EmployeeAttritionPrediction",
       live: null,
       keyHighlights: [
@@ -496,7 +531,7 @@ export const portfolioData = {
       period: "Sep 2025 - Nov 2025",
       description: "Engineered a 3-tier, role-based clinical monitoring platform supporting Patients, Doctors, and Admins across a normalized 10-table MySQL relational schema with Chart.js vitals tracking and automated PDF health reporting.",
       stack: ["Python", "Flask", "Scikit-learn", "PHP", "MySQL", "Chart.js", "Dialogflow", "JavaScript"],
-      image: null,
+      image: "/images/Emotion-Detection.png",
       github: "https://github.com/sankajithdjinasena/WelltackerR",
       live: null,
       keyHighlights: [
@@ -512,7 +547,7 @@ export const portfolioData = {
       period: "Sep 2025 - Nov 2025",
       description: "Modeled 39 years of daily historical stock returns (1986-2025) using parametric distributions (Normal, Log-Normal, Student’s t), fitting heavy-tailed characteristics and evaluating empirical win-loss probabilities.",
       stack: ["Python (Pandas, NumPy, Matplotlib, Seaborn)", "SciPy", "Statsmodels", "Monte Carlo Simulation", "Markov Chains"],
-      image: null,
+      image: "/images/Projects/defaults/stock-probability.svg",
       github: "https://github.com/sankajithdjinasena/MicrosoftStockAnalyzeUsingProbability",
       live: null,
       keyHighlights: [
@@ -549,7 +584,7 @@ export const portfolioData = {
       period: "Aug 2026",
       description: "A trilingual (English, Sinhala, Tamil) AI farm advisory application with a FAISS-indexed knowledge base and Groq LLM agents providing real-time crop advisory, weather forecasts, fertilizer recommendations, and market-price analysis.",
       stack: ["Python", "FastAPI", "Groq LLM", "FAISS", "Sentence Transformers", "HTML/CSS/JS"],
-      image: null,
+      image: "/images/Projects/defaults/agriagent.svg",
       github: "https://github.com/sankajithdjinasena",
       live: null,
       keyHighlights: [
@@ -566,7 +601,7 @@ export const portfolioData = {
       period: "Jul 2026",
       description: "A centralized university resource-booking platform with role-based access for students, faculty, and administrators. Uses priority-based scheduling for conflict-free allocation and dynamic waitlist routing for over-capacity requests.",
       stack: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
-      image: null,
+      image: "/images/NexLab.jpg",
       github: "https://github.com/sankajithdjinasena/NEXLAB",
       live: null,
       keyHighlights: [
@@ -583,7 +618,7 @@ export const portfolioData = {
       period: "Jan 2026 - Feb 2026",
       description: "A Python-based desktop application that enables users to efficiently explore, clean, visualize, and analyze CSV datasets through an intuitive graphical interface. Provides real-time data previews, automated data cleaning, interactive plots, and comprehensive statistical insights.",
       stack: ["Python", "Scikit-learn", "Tkinter", "Flask", "Pandas", "Matplotlib"],
-      image: null,
+      image: "/images/Projects/defaults/csv-analyzer.svg",
       github: "https://github.com/sankajithdjinasena/PythonMiniProjects/tree/main/CSV_Analyzer",
       live: null,
       keyHighlights: [
@@ -600,7 +635,7 @@ export const portfolioData = {
       period: "Jan 2026 - Feb 2026",
       description: "A real-time AI-powered surveillance system that detects animals entering a home environment, classifies them as safe or dangerous, and sends instant email alerts for potential threats using YOLO object detection and OpenCV.",
       stack: ["Python", "YOLO", "OpenCV", "Scikit-learn", "Flask"],
-      image: null,
+      image: "/images/bee-gesture.png",
       github: "https://github.com/sankajithdjinasena/SmartAnimalWatcher",
       live: null,
       keyHighlights: [
@@ -617,7 +652,7 @@ export const portfolioData = {
       period: "Feb 2025 - Jun 2025",
       description: "RideSync is a web prototype modernizing public transport administration by integrating route scheduling, digital ticket booking, fleet management, and passenger feedback into a centralized platform.",
       stack: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
-      image: null,
+      image: "/images/Projects/defaults/ridesync.svg",
       github: "https://github.com/sankajithdjinasena/BusManagementSystem",
       live: null,
       keyHighlights: [
@@ -634,7 +669,7 @@ export const portfolioData = {
       period: "Sep 2024 - Oct 2024",
       description: "Explored mobile device usage patterns to classify user behavior using real-world Kaggle datasets. Executed the full data science pipeline from data cleaning/EDA to training predictive ML classifiers.",
       stack: ["Python", "Scikit-learn", "Flask", "PHP", "MySQL"],
-      image: null,
+      image: "/images/Projects/defaults/user-behavior.svg",
       github: "https://github.com/sankajithdjinasena/UserBehaviorClassPredictor",
       live: null,
       keyHighlights: [
@@ -651,7 +686,7 @@ export const portfolioData = {
       period: "Jan 2025 - Mar 2025",
       description: "Machine learning-based environmental prediction system forecasting water quality levels from historical data. Integrates regression and classification models into an interactive web application.",
       stack: ["Python", "Scikit-learn", "Flask", "PHP", "MySQL"],
-      image: null,
+      image: "/images/Projects/defaults/hydroscan.svg",
       github: "https://github.com/sankajithdjinasena/WaterQualityPredictor",
       live: null,
       keyHighlights: [

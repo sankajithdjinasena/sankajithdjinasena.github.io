@@ -12,9 +12,7 @@ import {
   Layers,
   CheckCircle2,
   Cpu,
-  ArrowRight,
-  Play,
-  Pause
+  ArrowRight
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -36,7 +34,7 @@ const Showcase = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // Auto-play / Automatic change feature
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isAutoPlay] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const AUTOPLAY_DURATION = 6000; // 6 seconds per project
 
@@ -149,9 +147,9 @@ const Showcase = () => {
     ? currentProject.images
     : currentProject.image
     ? [currentProject.image]
-    : [];
+    : ['/images/Projects/defaults/default-preview.svg'];
 
-  const currentActiveImage = availableImages[activeImageIndex] || null;
+  const currentActiveImage = availableImages[activeImageIndex] || availableImages[0] || '/images/Projects/defaults/default-preview.svg';
   const targetLink = currentProject.github || currentProject.live || currentProject.pdf;
 
   return (
@@ -201,26 +199,12 @@ const Showcase = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Navigation Floating Header (Counter + Auto-Play Toggle + Next/Prev Buttons) */}
+        {/* Navigation Floating Header (Counter + Next/Prev Buttons) */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <span className="text-xs font-mono text-moonstone px-3 py-1 rounded-full bg-moonstone-dim border border-moonstone-border/20">
               PROJECT {String(currentIndex + 1).padStart(2, '0')} / {String(filteredProjects.length).padStart(2, '0')}
             </span>
-
-            {/* Auto-Play Toggle Option */}
-            <button
-              onClick={() => setIsAutoPlay(!isAutoPlay)}
-              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono border transition-all duration-300 ${
-                isAutoPlay
-                  ? 'bg-moonstone/15 border-moonstone/40 text-moonstone hover:bg-moonstone/25 shadow-[0_0_10px_rgba(224,231,255,0.2)]'
-                  : 'bg-white/5 border-white/10 text-white/50 hover:text-white hover:bg-white/10'
-              }`}
-              title={isAutoPlay ? 'Click to Pause Auto-Play' : 'Click to Enable Auto-Play'}
-            >
-              {isAutoPlay ? <Pause size={11} /> : <Play size={11} />}
-              <span>{isAutoPlay ? 'Auto-Cycle ON' : 'Auto-Cycle OFF'}</span>
-            </button>
           </div>
 
           {/* Swap Left/Right Arrow Controls */}
